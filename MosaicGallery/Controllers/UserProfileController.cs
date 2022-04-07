@@ -32,7 +32,7 @@ namespace MosaicGallery.Controllers
         [HttpPost]
         public IActionResult Post(UserProfile userProfile)
         {
-            userProfile.CreateDataTime = DateTime.Now;
+            userProfile.CreateDateTime = DateTime.Now;
             userProfile.UserTypeId = UserType.CREATOR_ID;
             _userRepository.Add(userProfile);
             return CreatedAtAction(

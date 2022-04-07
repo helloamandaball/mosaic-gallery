@@ -17,7 +17,7 @@ namespace MosaicGallery.Repositories
                 {
                     cmd.CommandText = @"
                         SELECT up.Id, up.FirstName, up.LastName, up.Username, 
-                               up.Email, up.CreateDataTime, up.ImageLocation, up.UserTypeId,
+                               up.Email, up.CreateDateTime, up.ImageLocation, up.UserTypeId,
                                ut.Name AS UserTypeName
                           FROM UserProfile up
                                LEFT JOIN UserType ut on up.UserTypeId = ut.Id
@@ -37,7 +37,7 @@ namespace MosaicGallery.Repositories
                             LastName = DbUtils.GetString(reader, "LastName"),
                             Username = DbUtils.GetString(reader, "Username"),
                             Email = DbUtils.GetString(reader, "Email"),
-                            CreateDataTime = DbUtils.GetDateTime(reader, "CreateDataTime"),
+                            CreateDateTime = DbUtils.GetDateTime(reader, "CreateDateTime"),
                             ImageLocation = DbUtils.GetString(reader, "ImageLocation"),
                             UserTypeId = DbUtils.GetInt(reader, "UserTypeId"),
                             UserType = new UserType()
@@ -62,16 +62,16 @@ namespace MosaicGallery.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"INSERT INTO UserProfile (FirstName, LastName, Username, 
-                                                                 Email, CreateDataTime, ImageLocation, UserTypeId)
+                                                                 Email, CreateDateTime, ImageLocation, UserTypeId)
                                         OUTPUT INSERTED.ID
                                         VALUES (@FirstName, @LastName, @Username, 
-                                                @Email, @CreateDataTime, @ImageLocation, @UserTypeId)";
-                    //DbUtils.AddParameter(cmd, "@FirebaseUserId", userProfile.FirebaseUserId);
+                                                @Email, @CreateDateTime, @ImageLocation, @UserTypeId)";
+ 
                     DbUtils.AddParameter(cmd, "@FirstName", userProfile.FirstName);
                     DbUtils.AddParameter(cmd, "@LastName", userProfile.LastName);
                     DbUtils.AddParameter(cmd, "@Username", userProfile.Username);
                     DbUtils.AddParameter(cmd, "@Email", userProfile.Email);
-                    DbUtils.AddParameter(cmd, "@CreateDataTime", userProfile.CreateDataTime);
+                    DbUtils.AddParameter(cmd, "@CreateDateTime", userProfile.CreateDateTime);
                     DbUtils.AddParameter(cmd, "@ImageLocation", userProfile.ImageLocation);
                     DbUtils.AddParameter(cmd, "@UserTypeId", userProfile.UserTypeId);
 

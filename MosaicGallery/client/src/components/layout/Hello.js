@@ -6,9 +6,12 @@ export default function Hello() {
       position: "fixed",
       left: 0,
       right: 0,
-      top: "50%",
+      top: "47%",
       marginTop: "-0.5rem",
       textAlign: "center",
-    }}>hello</span>
+    }}>
+        Hello!<br />
+        Welcome to Mosaic Gallery.
+    </span>
   );
 }

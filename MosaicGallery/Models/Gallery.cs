@@ -17,7 +17,7 @@ namespace MosaicGallery.Models
         [DisplayName("Image URL")]
         public string ImageLocation { get; set; }
 
-        public string CreateDataTime { get; set; }
+        public string CreateDateTime { get; set; }
 
         [DisplayName("Category")]
         public int CategoryId { get; set; }
