@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from "react";
 import { GalleryContext } from "../../providers/GalleryProvider";
-import GalleryThumbnail from "./GalleryThumbnail";
-import { useNavigate } from "react-router-dom"
+import MyGalleryThumbnail from "./MyGalleryThumbnail";
+import { useNavigate, Link } from "react-router-dom"
 import './Gallery.css';
 
 
 const MyGalleryList = () => {
 
-    const { galleries, getMyGalleries, addGallery } = useContext(GalleryContext);
+    const { galleries, getMyGalleries } = useContext(GalleryContext);
 
     const currentUser = JSON.parse(sessionStorage.getItem("userProfile"));
 
@@ -18,22 +18,20 @@ const MyGalleryList = () => {
     }, []);
 
     const handleNewGalleryBtn = () => {
-        navigate('/gallery/add')
+        navigate('/mygallery/create')
     };
 
     return (
         <>
-            <button type="button" className="newGalleryBtn btn btn-warning btn-sm" onClick={handleNewGalleryBtn}>
-                NEW GALLERY
+            <button type="button" className="newGalleryBtn" onClick={handleNewGalleryBtn}>
+                New Gallery
             </button>
-
-            <div className="thumbnailContainer">
+            <div className="spacer75">&nbsp;</div>
+            <div className="thumbnailListContainer">
                 {galleries.map((gallery) => (
-                    <div key={gallery.id}>
-                        <GalleryThumbnail gallery={gallery} />
-                    </div>
+                    <MyGalleryThumbnail key={gallery.id} gallery={gallery} />
                 ))}
-                
+                {/* .sort((a,b) => {return new Date(b.date) - new Date(a.date)}) */}
             </div>
         </>
     );

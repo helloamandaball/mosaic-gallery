@@ -65,7 +65,8 @@ namespace MosaicGallery.Controllers
         public IActionResult Post(Gallery gallery)
         {
             _galleryRepository.Add(gallery);
-            return CreatedAtAction("Get", new { id = gallery.Id }, gallery);
+            //return CreatedAtAction("Get", new { id = gallery.Id }, gallery);
+            return NoContent();
         }
 
         // UPDATE A SINGLE GALLERY

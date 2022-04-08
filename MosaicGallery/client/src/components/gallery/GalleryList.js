@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { GalleryContext } from "../../providers/GalleryProvider";
-import GalleryCard from "./GalleryCard";
+import GalleryDetails from "./GalleryDetails";
 
 const GalleryList = () => {
   
@@ -13,9 +13,7 @@ const GalleryList = () => {
   return (
     <div className="container">
       {galleries.map((gallery) => (
-        <div key={gallery.id}>
-          <GalleryCard gallery={gallery} />
-        </div>
+          <GalleryDetails key={gallery.id} gallery={gallery} />
       ))}
     </div>
   );

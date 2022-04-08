@@ -1,27 +1,48 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Card, CardImg, CardBody } from "reactstrap";
 import { GalleryContext } from "../../providers/GalleryProvider";
-import GalleryCard from "./GalleryCard";
 import './Gallery.css';
 
-const GalleryDetails = () => {
-    
-  const { galleries, getMyGalleries } = useContext(GalleryContext);
+const GalleryDetails = ({ gallery }) => {
+    const { getSingleGalleryById } = useContext(GalleryContext);
 
-  const currentUser = JSON.parse(sessionStorage.getItem("userProfile"));
+    const [singleGallery, setSingleGallery] = useState();
+    const { id } = useParams();
 
-  useEffect(() => {
-    getMyGalleries(currentUser.id);
-  }, []);
+    useEffect(() => {
+        if (!gallery) {
+            getSingleGalleryById(id)
+            .then(setSingleGallery);
+        } else {
+            setSingleGallery(gallery)
+        }
+    }, []);
 
-  return (
-    <div className="container">
-      {galleries.map((gallery) => (
-        <div key={gallery.id}>
-          <GalleryCard gallery={gallery} />
-        </div>
-      ))}
+    return (
+        <div className="container">
+            <Card className="mt-4">
+                <CardImg src={singleGallery?.imageLocation} alt={singleGallery?.title} />
+                <div className="textContent">
+                    <h3 className="galleryHeader text-left px-2">
+                        {singleGallery?.title}
+                    </h3>
+                    <div className="separatorRule"></div>
+
+                    <div className="createdByContent">
+                        <img className="avatarImg" src={singleGallery?.userProfile.imageLocation} alt={singleGallery?.userProfile.fullName} />
+                        <p className="createdByText">
+                            Created by: {singleGallery?.userProfile.fullName}
+                        </p>
+                    </div>
+
+                    {/* <p className="text-left px-2">{gallery.category.name}</p> */}
+
+                    <p className="blurbText text-left px-4">{singleGallery?.content}</p>
+                </div>
+            </Card>
     </div>
-  );
+    );
 };
 
 export default GalleryDetails;

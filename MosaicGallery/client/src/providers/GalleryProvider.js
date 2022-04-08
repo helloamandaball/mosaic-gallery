@@ -18,9 +18,9 @@ export const GalleryProvider = (props) => {
 
     //Get A Single Gallery By Id --- Not User Specific
     const getSingleGalleryById = (id) => {
+        // console.log("galleryId:", id)
         return fetch(`${apiUrl}/api/gallery/${id}`)
             .then(r => r.json())
-            .then(setGalleries);
     };
 
     //Get All of the Current User's Galleries --- User Specific
@@ -52,7 +52,7 @@ export const GalleryProvider = (props) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(gallery)
-        }).then(r => r.json());
+        })
     };
 
     //Update A Single Gallery

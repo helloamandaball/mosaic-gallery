@@ -33,7 +33,7 @@ INSERT INTO [Gallery] ([Id], [Title], [Content], [ImageLocation], [CreateDateTim
 	VALUES (2, 'Typography in Art', 'Sed nec quam est. Proin efficitur velit dui, vitae imperdiet metus consectetur at. Duis rutrum augue sed mi rhoncus, ac condimentum enim euismod. In hac habitasse platea dictumst. Nam vel elementum tellus.', 'https://www.metmuseum.org/-/media/images/art/metpublication/cover/2014/cubism_the_leonard_a_lauder_collection.jpg?sc_lang=en', '2022-04-05', 15, 2);
 
 INSERT INTO [Gallery] ([Id], [Title], [Content], [ImageLocation], [CreateDateTime], [CategoryId], [UserProfileId])
-	VALUES (3, 'Modern Sculpture', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed mauris maximus, gravida tortor non, porttitor dui. Donec blandit, arcu ac pulvinar dignissim, augue leo auctor sapien, ut vestibulum sem tellus eget ante.', 'https://sothebys-com.brightspotcdn.com/dims4/default/e1342fb/2147483647/strip/true/crop/2799x2757+0+0/resize/684x674!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2Fb9%2F03%2F9ed704ee43a2a334567bd2c94ebc%2F220pf1815-6y7ws-4.jpg', '2022-04-06', 3, 1); 
+	VALUES (3, 'Modern Sculpture', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed mauris maximus, gravida tortor non, porttitor dui. Donec blandit, arcu ac pulvinar dignissim, augue leo auctor sapien, ut vestibulum sem tellus eget ante.', 'https://www.cnstatue.com/wp-content/uploads/2021/01/Abstract-Modern-Metal-Horseman-Sculpture-Hotel-Villa-Decor-for-Sale-600x600.jpg', '2022-04-06', 3, 1); 
 SET IDENTITY_INSERT [Gallery] OFF
 
 SET IDENTITY_INSERT [GalleryTag] ON

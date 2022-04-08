@@ -13,7 +13,7 @@
         letter-spacing: 1px;
         color: #7a7a7a
     }
-    .seperatorRule {
+    .separatorRule {
         width: 50px;
         height: 1px;
         background-color: #841c6f;
@@ -55,20 +55,45 @@
 
 /* Create New Gallery */
 .newGalleryBtn {
-    margin: 20px 20px 20px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    width: 94px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    padding: 3px 1px 1px;
+    margin: 30px 20px 20px auto;
+}
+
+/* Spacers */
+.spacer50 {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+}
+
+.spacer75 {
+    height: 75px;
+    width: 75px;
+    background-color: transparent;
 }
 
 /* Thumbnail Content*/
-.thumbnailContainer {
+.thumbnailListContainer {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     max-width: 700px;
     margin: 10px auto;
-    
     padding: 10px 30px;
 }
     .thumbnailView {
-        padding: 0px 10px 0px 0px;
+        padding: 0px 20px 30px 0px;
     }
         .thumbnailImgBox {
             display: flex;
@@ -97,13 +122,26 @@
         }
             .thumbnailTitle {
                 font-family: 'Raleway', Arial, Helvetica, sans-serif;
-                font-weight: 400;
+                font-weight: 500;
                 font-size: 14px;
                 letter-spacing: 1px;
                 text-align: left;
                 text-transform: uppercase;
                 color: #7a7a7a;
-                margin: 3px 6px 0px 1px;
+                margin: 3px 6px 0px 2px;
+                text-decoration: none;
+            }
+                .thumbnailTitle:hover {
+                    text-decoration: underline;
+                }
+            .createDate {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                font-size: 11px;
+                /* letter-spacing: 1px; */
+                text-align: left;
+                color: #d6d6d6;
+                margin: 3px 6px 0px 2px;
                 text-decoration: none;
             }
             .thumbnailEditDelete{
@@ -113,7 +151,7 @@
                     display: inline-block;
                     line-height: 1.5;
                     user-select: none;
-                    color: #7a7a7a;
+                    color: #a8a8a8;
                     background-color: transparent;
                     border: none;
                     padding: 1px 4px;
@@ -121,6 +159,5 @@
                     border-radius: 0;
                 }
                 .thumbnailEditBtn:hover, .thumbnailDeleteBtn:hover {
-                    background-color: red;
-                    color: yellow;
+                    color: #7a7a7a;
                 }
