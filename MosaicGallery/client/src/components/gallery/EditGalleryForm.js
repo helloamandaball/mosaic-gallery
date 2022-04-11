@@ -25,7 +25,7 @@ const EditGalleryForm = () => {
         const updateGallery = { ...gallery }
         updateGallery[event.target.id] = event.target.value
         setGallery(updateGallery)
-        console.log("handleChangeInput is working. Gallery Id:", id)
+        // console.log("handleChangeInput is working. Gallery Id:", id)
     }
 
     const handleUpdateGallery = (event) => {
@@ -38,18 +38,19 @@ const EditGalleryForm = () => {
                 imageLocation: gallery.imageLocation,
                 createDateTime: gallery.createDateTime,
                 categoryId: gallery.categoryId,
-                userProfileId: JSON.parse(sessionStorage.getItem("userProfile")).id
+                userProfileId: gallery.userProfileId
             })
-            .then(() => navigate("/mygallery"));
-            console.log("handleUpdateGallery is working. Gallery Id:", id)
+            .then(getAllGalleries)
+            .then(() => navigate("/mygallery"))
+            // console.log("handleUpdateGallery is working. Gallery Id:", id)
         }        
     }
     
     useEffect(() => {
         getSingleGalleryById(id)
         .then(gallery => {setGallery(gallery)})
-        console.log("Gallery Id: ", id)
         // .then(getAllCategories);
+        // console.log("usEffect is working. Gallery Id:", id)
     }, [])
 
     return (

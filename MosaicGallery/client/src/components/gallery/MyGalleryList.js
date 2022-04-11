@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom"
 import './Gallery.css';
 
 
-const MyGalleryList = () => {
+export const MyGalleryList = () => {
 
     const { galleries, getMyGalleries } = useContext(GalleryContext);
 
@@ -18,7 +18,7 @@ const MyGalleryList = () => {
     }, []);
 
     const handleNewGalleryBtn = () => {
-        navigate('/mygallery/create')
+        navigate(`/mygallery/create`)
     };
 
     return (
@@ -27,14 +27,13 @@ const MyGalleryList = () => {
                 New Gallery
             </button>
             <div className="spacer75">&nbsp;</div>
+            
             <div className="thumbnailListContainer">
                 {galleries.map((gallery) => (
                     <MyGalleryThumbnail key={gallery.id} gallery={gallery} />
-                )).sort((a,b) => {return new Date(b.date) - new Date(a.date)})}
-                {/*  */}
+                )).sort((a, b) => b.createDateTime - a.createDateTime)}
             </div>
         </>
     );
 };
 
-export default MyGalleryList;

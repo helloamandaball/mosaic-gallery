@@ -29,21 +29,7 @@ export const GalleryProvider = (props) => {
             .then(r => r.json())
             .then(setGalleries);
     };
-
-    //Get A User's Single Gallery By Id --- User Specific
-    const getUsersSingleGalleryById = (id, userId) => {
-        return fetch(`${apiUrl}/api/gallery/mygallery/${id}?userId=${userId}`)
-            .then(r => r.json())
-            .then((myGallery) => {
-                const currentUserId = JSON.parse(sessionStorage.getItem("userProfile")).id;
-                if (myGallery.userProfileId === currentUserId) {
-                    setSingleGallery(myGallery);
-                    return myGallery;
-                }
-                return getUsersSingleGalleryById(myGallery.id);
-            });
-    };
-
+   
     //Add A New Gallery
     const addGallery = (gallery) => {
         return fetch(`${apiUrl}/api/gallery`, {
@@ -57,13 +43,14 @@ export const GalleryProvider = (props) => {
 
     //Update A Single Gallery
     const editGallery = (gallery) => {
+       
         return fetch(`${apiUrl}/api/gallery/${gallery.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(gallery)
-        }).then(r => r.json());
+        });
     };
 
     //Delete A Single Gallery
@@ -71,11 +58,25 @@ export const GalleryProvider = (props) => {
         return fetch(`${apiUrl}/api/gallery/${id}`, {
             method: "DELETE"
         });
-    };
+    }; 
+    
+    //Get A User's Single Gallery By Id --- User Specific
+    // const getUsersSingleGalleryById = (id, userId) => {
+    //     return fetch(`${apiUrl}/api/gallery/mygallery/${id}?userId=${userId}`)
+    //         .then(r => r.json())
+    //         .then((myGallery) => {
+    //             const currentUserId = JSON.parse(sessionStorage.getItem("userProfile")).id;
+    //             if (myGallery.userProfileId === currentUserId) {
+    //                 setSingleGallery(myGallery);
+    //                 return myGallery;
+    //             }
+    //             return getUsersSingleGalleryById(myGallery.id);
+    //         });
+    // };
 
     return (
         <GalleryContext.Provider value={{
-            galleries, getAllGalleries, getMyGalleries, singleGallery, getSingleGalleryById,getUsersSingleGalleryById, addGallery, editGallery, deleteGallery
+            galleries, getAllGalleries, getMyGalleries, singleGallery, getSingleGalleryById, addGallery, editGallery, deleteGallery
         }}>
             {props.children}
         </GalleryContext.Provider>

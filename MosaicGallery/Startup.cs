@@ -29,6 +29,7 @@ namespace MosaicGallery
         {
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IGalleryRepository, GalleryRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

@@ -7,9 +7,8 @@ import './Gallery.css';
 
 const MyGalleryThumbnail = ({ gallery }) => {
 
-    const { getMyGalleries, deleteGallery } = useContext(GalleryContext);
+    const { deleteGallery } = useContext(GalleryContext);
 
-    const currentUser = JSON.parse(sessionStorage.getItem("userProfile"));
     const navigate = useNavigate();
 
     const handleEdit = () => {
@@ -20,10 +19,8 @@ const MyGalleryThumbnail = ({ gallery }) => {
         var confirmDelete = window.confirm("Are you sure you want to delete the gallery: " + (gallery.title) + "?")
         if (confirmDelete) {
             deleteGallery(gallery.id)
-            .then(getMyGalleries(currentUser.id))
              .then(navigate(`/mygallery`));
         } else {
-             getMyGalleries(currentUser.id)
              navigate(`/mygallery`)
         };
     };

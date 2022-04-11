@@ -199,7 +199,7 @@ namespace MosaicGallery.Repositories
                            SET Title = @title, 
                                Content = @content, 
                                ImageLocation = @imageLocation, 
-                               CreateDateTime = @createDataTime, ,
+                               CreateDateTime = @createDataTime,
                                CategoryId = @categoryId,
                                UserProfileId = @userProfileId
                          WHERE Id = @id";
