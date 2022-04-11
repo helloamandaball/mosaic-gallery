@@ -65,7 +65,7 @@ namespace MosaicGallery.Controllers
         public IActionResult Post(Gallery gallery)
         {
             _galleryRepository.Add(gallery);
-            //return CreatedAtAction("Get", new { id = gallery.Id }, gallery);
+            //return CreatedAtAction("Get", new { id = gallery.Id }, gallery); ////<--No "Get" method (its a GetAll etc) and we just need it to add and not do anything after
             return NoContent();
         }
 

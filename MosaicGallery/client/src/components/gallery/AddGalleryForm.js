@@ -4,7 +4,7 @@ import { Button, Container, Form, FormFeedback, FormGroup, Input, Label } from "
 import { GalleryContext } from "../../providers/GalleryProvider";
 // import { CategoryContext } from "../../providers/CategoryProvider";
 
-const GalleryForm = () => {
+const AddGalleryForm = () => {
 
     const { addGallery, getAllGalleries } = useContext(GalleryContext);
     // const { categories, getAllCategories} = useContext(CategoriesContext);
@@ -74,7 +74,7 @@ const GalleryForm = () => {
                 </FormGroup>
                 <FormGroup >
             <Label for="CategoryId" hidden>Category</Label>
-            <Input
+            {/* <Input
                 id="categoryId"
                 placeholder="Category"
                 type="select"
@@ -82,14 +82,15 @@ const GalleryForm = () => {
                 value={gallery.categoryId}
                 >
                 <option value="0">Please Select a Category</option>
-                {/* {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)} */}
-            </Input>
+                {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+            </Input> */}
             <FormFeedback></FormFeedback>
             </FormGroup>
-                <Button onClick={handleSave}>Submit</Button>
+                <Button onClick={handleSave}>Submit</Button> 
+                <Button className ="mx-3" onClick={() =>{navigate (`/mygallery`)} }>Cancel</Button>
             </Form>
         </Container>
     );
 };
 
-export default GalleryForm;
+export default AddGalleryForm;

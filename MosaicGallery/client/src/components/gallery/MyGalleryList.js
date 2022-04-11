@@ -30,8 +30,8 @@ const MyGalleryList = () => {
             <div className="thumbnailListContainer">
                 {galleries.map((gallery) => (
                     <MyGalleryThumbnail key={gallery.id} gallery={gallery} />
-                ))}
-                {/* .sort((a,b) => {return new Date(b.date) - new Date(a.date)}) */}
+                )).sort((a,b) => {return new Date(b.date) - new Date(a.date)})}
+                {/*  */}
             </div>
         </>
     );

@@ -7,36 +7,43 @@ import './Gallery.css';
 
 const MyGalleryThumbnail = ({ gallery }) => {
 
-    const { getAllGalleries, deleteGallery } = useContext(GalleryContext);
+    const { getMyGalleries, deleteGallery } = useContext(GalleryContext);
+
+    const currentUser = JSON.parse(sessionStorage.getItem("userProfile"));
     const navigate = useNavigate();
 
     const handleEdit = () => {
-        // navigate(`/gallery/edit/${gallery.id}`)
+        navigate(`/gallery/edit/${gallery.id}`)
     };
 
     const handleDelete = () => {
-        // var confirmDelete = window.confirm("Are you sure you want to delete the tag: " + (gallery.name) + "?")
-        // if (confirmDelete) {
-        //     deleteGallery(gallery.id)
-        //     .then(getAllGalleries);;
-        // } else {
-        //     getAllGalleries();
-        // };
+        var confirmDelete = window.confirm("Are you sure you want to delete the gallery: " + (gallery.title) + "?")
+        if (confirmDelete) {
+            deleteGallery(gallery.id)
+            .then(getMyGalleries(currentUser.id))
+             .then(navigate(`/mygallery`));
+        } else {
+             getMyGalleries(currentUser.id)
+             navigate(`/mygallery`)
+        };
     };
 
     return (
-        <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
             <div className="thumbnailView">
-                <div className="thumbnailImgBox">
-                    <img className="thumbnailImg" src={gallery.imageLocation} alt={gallery.title}></img>
-                </div>
+                <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
+                    <div className="thumbnailImgBox">
+                        <img className="thumbnailImg" src={gallery.imageLocation} alt={gallery.title}></img>
+                    </div>
+                </Link>
                 <div className="thumbnailTitlePlusEditDel">
-                    <p className="thumbnailTitle">{gallery.title}</p>
+                    <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
+                        <p className="thumbnailTitle">{gallery.title}</p>
+                    </Link>
                     <div className="thumbnailEditDelete">
-                        <button type="button" className="thumbnailEditBtn" id="tagProp.id" onClick={handleEdit}>
+                        <button type="button" className="thumbnailEditBtn" id="gallery.id" onClick={handleEdit}>
                             <FontAwesomeIcon icon={faPencilAlt} />
                         </button>
-                        <button type="button" className="thumbnailDeleteBtn" id="tagProp.id" onClick={handleDelete}>
+                        <button type="button" className="thumbnailDeleteBtn" id="gallery.id" onClick={handleDelete}>
                             <FontAwesomeIcon icon={faTrashAlt} />
                         </button>
                     </div>
@@ -45,7 +52,6 @@ const MyGalleryThumbnail = ({ gallery }) => {
                     <p className="createDate">Created on: {gallery.createDateTime}</p>
                 </div>
             </div>
-        </Link>
     )
 }
 

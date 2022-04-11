@@ -65,7 +65,7 @@ namespace MosaicGallery.Repositories
                      LEFT JOIN Category c ON c.Id = g.CategoryId
                      LEFT JOIN UserProfile up ON up.Id = g.UserProfileId
                      LEFT JOIN UserType ut ON ut.Id = up.UserTypeId
-WHERE up.Id = @userProfileId
+                         WHERE up.Id = @userProfileId
                       ORDER BY g.CreateDateTime";
 
                     cmd.Parameters.AddWithValue("@userProfileId", userProfileId);

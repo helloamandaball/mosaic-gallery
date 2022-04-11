@@ -8,7 +8,8 @@ import MyGalleryList from "../gallery/MyGalleryList";
 import FavoritesList from "../favorite/FavoritesList";
 import GalleryList from "../gallery/GalleryList";
 import GalleryDetails from "../gallery/GalleryDetails";
-import GalleryForm from "../gallery/GalleryForm";
+import AddGalleryForm from "../gallery/AddGalleryForm";
+import EditGalleryForm from "../gallery/EditGalleryForm";
 
 export default function ApplicationViews() {
     const { isLoggedIn } = useContext(UserProfileContext);
@@ -30,7 +31,8 @@ export default function ApplicationViews() {
                 <Route path="/gallery/:id" element={<GalleryDetails />} />
                 <Route path="/favorites" element={<FavoritesList />} />
                 <Route path="/discover" element={<GalleryList />} />
-                <Route path="mygallery/create" element={<GalleryForm />} />
+                <Route path="mygallery/create" element={<AddGalleryForm />} />
+                <Route path="gallery/edit/:id" element={<EditGalleryForm />} />
             </Routes>
         );
     }
