@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Container, Form, FormFeedback, FormGroup, Input, Label } from "reactstrap";
 import { GalleryContext } from "../../providers/GalleryProvider";
-// import { CategoryContext } from "../../providers/CategoryProvider";
+import { CategoryContext } from "../../providers/CategoryProvider";
 
 const EditGalleryForm = () => {
 
     const { editGallery, getAllGalleries, getSingleGalleryById } = useContext(GalleryContext);
-    // const { categories, getAllCategories} = useContext(CategoriesContext);
+    const { categories, getAllCategories} = useContext(CategoryContext);
 
     const [gallery, setGallery] = useState({
         title: "",
@@ -49,7 +49,7 @@ const EditGalleryForm = () => {
     useEffect(() => {
         getSingleGalleryById(id)
         .then(gallery => {setGallery(gallery)})
-        // .then(getAllCategories);
+        .then(getAllCategories);
         // console.log("usEffect is working. Gallery Id:", id)
     }, [])
 
@@ -90,7 +90,7 @@ const EditGalleryForm = () => {
                 </FormGroup>
                 <FormGroup >
             <Label for="CategoryId" hidden>Category</Label>
-            {/* <Input
+            <Input
                 id="categoryId"
                 placeholder="Category"
                 type="select"
@@ -99,7 +99,7 @@ const EditGalleryForm = () => {
                 >
                 <option value="0">Please Select a Category</option>
                 {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-            </Input> */}
+            </Input>
             <FormFeedback></FormFeedback>
             </FormGroup>
                 <Button onClick={handleUpdateGallery}>Update</Button>

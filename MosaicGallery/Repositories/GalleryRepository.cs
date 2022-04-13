@@ -251,11 +251,11 @@ namespace MosaicGallery.Repositories
                 ImageLocation = DbUtils.GetString(reader, "ImageLocation"),
                 CreateDateTime = DbUtils.GetDateTime(reader, "CreateDateTime").ToString("MM/dd/yyyy"),
                 CategoryId = DbUtils.GetInt(reader, "CategoryId"),
-                //GalleryCategory = new Category()
-                //{
-                //    Id = DbUtils.GetInt(reader, "CategoryId"),
-                //    Name = DbUtils.GetString(reader, "Name")
-                //},
+                Category = new Category()
+                {
+                    Id = DbUtils.GetInt(reader, "CategoryId"),
+                    Name = DbUtils.GetString(reader, "Name")
+                },
                 UserProfileId = DbUtils.GetInt(reader, "UserProfileId"),
                 UserProfile = new UserProfile()
                 {
@@ -275,9 +275,5 @@ namespace MosaicGallery.Repositories
                 },
             };
         }
-
-
-
-
     }
 }

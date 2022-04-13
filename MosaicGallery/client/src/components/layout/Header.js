@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { NavLink as RRNavLink } from "react-router-dom";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { UserProfileContext } from "../../providers/UserProfileProvider";
 
 export default function Header() {
@@ -33,6 +34,26 @@ export default function Header() {
               <NavItem>
                 <NavLink tag={RRNavLink} to="/discover">discover</NavLink>
               </NavItem>
+
+              <NavItem>
+                <NavLink tag={RRNavLink} to="/categories">categories</NavLink>
+              </NavItem>
+
+              {/* <NavItem>
+                <NavLink tag={RRNavLink} to="/admin">
+                    <UncontrolledDropdown>
+                        <DropdownToggle size="sm" caret>
+                            admin
+                        </DropdownToggle>
+                        <DropdownMenu> */}
+                            {/* <DropdownItem header>Admin</DropdownItem> */}
+                            {/* <DropdownItem disabled>categories</DropdownItem> */}
+                            {/* <DropdownItem divider /> */}
+                            {/* <DropdownItem disabled>tags</DropdownItem>
+                        </DropdownMenu>
+                    </UncontrolledDropdown>
+                </NavLink>
+              </NavItem> */}
             </>
             }
           </Nav>
