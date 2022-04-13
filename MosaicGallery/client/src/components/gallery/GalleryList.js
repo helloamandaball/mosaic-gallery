@@ -21,7 +21,7 @@ const GalleryList = () => {
 
     return (
         <>
-            <button type="button" className="newGalleryBtn" onClick={handleRandomGalleryBtn}>
+            <button type="button" className="randomGalleryBtn" onClick={handleRandomGalleryBtn}>
                 View Random Gallery
             </button>
             <div className="spacer75">&nbsp;</div>
