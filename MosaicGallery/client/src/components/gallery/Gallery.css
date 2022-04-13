@@ -30,8 +30,8 @@
         .avatarImg {
             width: 40px;
             height: 40px;
-            border: 1px solid #ddd;
-            border-radius: 50%;
+            /* border: 1px solid #ddd;
+            border-radius: 50%; */
             background-color: #fff;
         }
         .createdByText {
@@ -44,29 +44,36 @@
             height: 20px;
             margin: 1px 1px 1px 15px;
         }
-    .categoryText {
-        font-family: 'Raleway', Arial, Helvetica, sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        letter-spacing: 1px;
-        font-style: italic;
-        text-align: center;
-        color: #7a7a7a;
-    }    
-    .blurbText {
-        font-family: 'Libre Baskerville', Georgia, 'Times New Roman', Times, serif;
-        font-weight: 400;
-        font-size: 14px;
-        text-align: justify;
-        color: #7a7a7a;
-        margin: 20px 0px 20px;
-    }
-        .blurbText::first-letter{
-            float: left;
-            font-size: 42px; 
-            line-height: 42px;
-            margin-right: 2px;
+        .blurbText {
+            font-family: 'Libre Baskerville', Georgia, 'Times New Roman', Times, serif;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: justify;
+            color: #7a7a7a;
+            margin: 20px 0px 40px;
         }
+            .blurbText::first-letter{
+                float: left;
+                font-size: 42px; 
+                line-height: 42px;
+                margin-right: 2px;
+            }
+        .categoryTextBlock {
+            width: 100%;
+            height: 40px;
+            background-color: #77aa77;
+            padding: 5px auto;
+        }
+            .categoryText {
+                font-family: 'Raleway', Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                font-size: 14px;
+                letter-spacing: 1px;
+                font-style: italic;
+                text-align: center;
+                color: #fff;
+                padding-top: 8px;
+            }    
 
 /* Create New Gallery */
 .newGalleryBtn {
@@ -129,8 +136,13 @@
             padding: 0;
             margin: 0 auto;
         }
-
         .thumbnailTitlePlusEditDel {
+            display: flex;
+            justify-content:space-between;
+            margin-top: 10px;
+        }
+        .thumbnailTitlePlusFav{
+            width: 280px;
             display: flex;
             justify-content:space-between;
             margin-top: 10px;
@@ -170,20 +182,49 @@
                 margin: 2px 6px 0px 2px;
                 text-decoration: none;
             }
+            .createdByThumb {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                font-size: 11px;
+                letter-spacing: 0.5px;
+                text-align: left;
+                color: #c4c4c4;
+                margin: 2px 6px 0px 2px;
+                text-decoration: none;
+            }
             .thumbnailEditDelete{
                 margin-right: 0px;
             }
                 .thumbnailEditBtn, .thumbnailDeleteBtn {
                     display: inline-block;
+                    font-size: 14px;
                     line-height: 1.5;
                     user-select: none;
                     color: #a8a8a8;
                     background-color: transparent;
                     border: none;
                     padding: 1px 4px;
-                    font-size: 14px;
                     border-radius: 0;
                 }
                 .thumbnailEditBtn:hover, .thumbnailDeleteBtn:hover {
+                    color: #7a7a7a;
+                }
+            .thumbnailFavBlock{
+                margin-right: 0px;
+            }
+                .thumbnailFavBtn {
+                    display: inline-block;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    user-select: none;
+                    color: #a8a8a8;
+                    background-color: transparent;
+                    border: none;
+                    padding: 1px 4px;
+                    border-radius: 0;
+                }
+                .thumbnailFavBtn:hover {
+                    font-size: 18px;
+                    line-height: 1.35;
                     color: #7a7a7a;
                 }
