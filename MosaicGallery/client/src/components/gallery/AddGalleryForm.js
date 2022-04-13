@@ -38,7 +38,7 @@ const AddGalleryForm = () => {
     }
 
     const handleAddImageInputField = () => {
-        let newInput = document.querySelector("#newImageInputField")
+        // let newInput = document.querySelector("#newImageInputField")
         return (
             <FormGroup >
                 <Label for="imageLocation" hidden>Image Location</Label>
@@ -52,6 +52,7 @@ const AddGalleryForm = () => {
             </FormGroup>
         )
     }
+    console.log(handleAddImageInputField)
 
     return (
         <Container className="pt-5">
@@ -99,7 +100,8 @@ const AddGalleryForm = () => {
                     <FormFeedback></FormFeedback>
                 </FormGroup>
                 <div id="newImageInputField"></div>
-                <Button className="btn-sm btn-warning my-3" onClick={handleAddImageInputField}>Add another image</Button>
+                <Button className="btn-sm btn-warning my-3" onClick={handleAddImageInputField}>
+            Add another image</Button>
 
                 <FormGroup>
                     <Label for="CategoryId" hidden>Category</Label>
