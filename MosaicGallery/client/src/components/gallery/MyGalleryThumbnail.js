@@ -7,48 +7,49 @@ import './Gallery.css';
 
 const MyGalleryThumbnail = ({ gallery }) => {
 
-    const { deleteGallery } = useContext(GalleryContext);
+    const { getAllGalleries, deleteGallery } = useContext(GalleryContext);
 
     const navigate = useNavigate();
 
     const handleEdit = () => {
-        navigate(`/gallery/edit/${gallery.id}`)
+        navigate(`/mygallery/edit/${gallery.id}`)
     };
 
     const handleDelete = () => {
         var confirmDelete = window.confirm("Are you sure you want to delete the gallery: " + (gallery.title) + "?")
         if (confirmDelete) {
             deleteGallery(gallery.id)
-             .then(navigate(`/mygallery`));
+                .then(getAllGalleries)
+                .then(navigate(`/mygallery`));
         } else {
-             navigate(`/mygallery`)
+            navigate(`/mygallery`)
         };
     };
 
     return (
-            <div className="thumbnailView">
-                <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
-                    <div className="thumbnailImgBox">
-                        <img className="thumbnailImg" src={gallery.imageLocation} alt={gallery.title}></img>
-                    </div>
-                </Link>
-                <div className="thumbnailTitlePlusEditDel">
-                    <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
-                        <p className="thumbnailTitle">{gallery.title}</p>
-                    </Link>
-                    <div className="thumbnailEditDelete">
-                        <button type="button" className="thumbnailEditBtn" id="gallery.id" onClick={handleEdit}>
-                            <FontAwesomeIcon icon={faPencilAlt} />
-                        </button>
-                        <button type="button" className="thumbnailDeleteBtn" id="gallery.id" onClick={handleDelete}>
-                            <FontAwesomeIcon icon={faTrashAlt} />
-                        </button>
-                    </div>
+        <div className="thumbnailView">
+            <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
+                <div className="thumbnailImgBox">
+                    <img className="thumbnailImg" src={gallery.imageLocation} alt={gallery.title}></img>
                 </div>
-                <div>
-                    <p className="createDate">Created on: {gallery.createDateTime}</p>
+            </Link>
+            <div className="thumbnailTitlePlusEditDel">
+                <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
+                    <p className="thumbnailTitle">{gallery.title}</p>
+                </Link>
+                <div className="thumbnailEditDelete">
+                    <button type="button" className="thumbnailEditBtn" id="gallery.id" onClick={handleEdit}>
+                        <FontAwesomeIcon icon={faPencilAlt} />
+                    </button>
+                    <button type="button" className="thumbnailDeleteBtn" id="gallery.id" onClick={handleDelete}>
+                        <FontAwesomeIcon icon={faTrashAlt} />
+                    </button>
                 </div>
             </div>
+            <div>
+                <p className="createDate">Created on: {gallery.createDateTime}</p>
+            </div>
+        </div>
     )
 }
 

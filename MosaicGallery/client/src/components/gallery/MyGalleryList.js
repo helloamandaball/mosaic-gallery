@@ -4,8 +4,7 @@ import MyGalleryThumbnail from "./MyGalleryThumbnail";
 import { useNavigate, Link } from "react-router-dom"
 import './Gallery.css';
 
-
-export const MyGalleryList = () => {
+const MyGalleryList = () => {
 
     const { galleries, getMyGalleries } = useContext(GalleryContext);
 
@@ -37,3 +36,4 @@ export const MyGalleryList = () => {
     );
 };
 
+export default MyGalleryList;

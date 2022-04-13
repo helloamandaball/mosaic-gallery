@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Syncopate:wght@400;700&display=swap');
+
+
+.categoryHeaderContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 700px;
+    margin: 10px auto;
+    padding: 10px 30px;
+}
+    .categoryHeader {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 21px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #7a7a7a;
+        margin: 0px;
+        padding-top: 15px;
+    }
+    .newCategoryBtn {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: #ffc107;
+        color: #000;
+        border: none;
+        border-radius: 3px;
+        width: 120px;
+        height: 40px;
+        position: absolute;
+        right: 0px;
+        padding: 3px 1px 1px;
+        margin: 30px 20px 20px auto;
+    }
+    .categoryListContainer {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        max-width: 700px;
+        margin: 5px auto;
+        
+    }
+        /* Alternate colors of table rows */
+        .categoryListContainer:nth-child(even) {
+            background: #fff;
+            padding: 6px 30px 1px;
+        }
+        .categoryListContainer:nth-child(odd) {
+            background: #f6f6f6;
+            padding: 9px 30px 3px;
+        }
+        .categoryTitle{
+            font-family: 'Raleway', Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #7a7a7a;
+            padding-top: 5px;
+        }
+        .categoryEditDelete{
+            margin-right: 0px;
+            margin-left: 10px;
+        }
+        .categoryEditBtn, .categoryDeleteBtn {
+            display: inline-block;
+            line-height: 1.5;
+            user-select: none;
+            color: #a8a8a8;
+            background-color: transparent;
+            border: none;
+            padding: 1px 4px;
+            font-size: 14px;
+            border-radius: 0;
+        }
+        .categoryEditBtn:hover, .categoryDeleteBtn:hover {
+            color: #7a7a7a;
+        }
+
+/* Spacers */
+.spacer50 {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+}
+
+.spacer75 {
+    height: 75px;
+    width: 75px;
+    background-color: transparent;
+}        

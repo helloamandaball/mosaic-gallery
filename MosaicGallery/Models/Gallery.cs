@@ -22,7 +22,7 @@ namespace MosaicGallery.Models
         [DisplayName("Category")]
         public int CategoryId { get; set; }
 
-        //public Category Category { get; set; }
+        public Category Category { get; set; }
 
         [DisplayName ("Creator")]
         public int UserProfileId { get; set; }
