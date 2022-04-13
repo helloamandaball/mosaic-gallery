@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom"
 import { GalleryContext } from "../../providers/GalleryProvider";
 import MyGalleryThumbnail from "./MyGalleryThumbnail";
-import { useNavigate, Link } from "react-router-dom"
 import './Gallery.css';
 
 const MyGalleryList = () => {
@@ -10,7 +10,7 @@ const MyGalleryList = () => {
 
     const currentUser = JSON.parse(sessionStorage.getItem("userProfile"));
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         getMyGalleries(currentUser.id);
