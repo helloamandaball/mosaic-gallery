@@ -47,7 +47,8 @@ const MyGalleryThumbnail = ({ gallery }) => {
                 </div>
             </div>
             <div>
-                <p className="createDate">Created on: {gallery.createDateTime}</p>
+                <p className="categoryThumb">Category: {gallery.category.name}</p>
+                <p className="createDateThumb">Created on: {gallery.createDateTime}</p>
             </div>
         </div>
     )

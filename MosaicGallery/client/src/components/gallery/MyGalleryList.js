@@ -30,7 +30,7 @@ const MyGalleryList = () => {
             <div className="thumbnailListContainer">
                 {galleries.map((gallery) => (
                     <MyGalleryThumbnail key={gallery.id} gallery={gallery} />
-                )).sort((a, b) => b.createDateTime - a.createDateTime)}
+                )).sort((a, b) => new Date(b.date) - new Date(a.date)).reverse()}
             </div>
         </>
     );

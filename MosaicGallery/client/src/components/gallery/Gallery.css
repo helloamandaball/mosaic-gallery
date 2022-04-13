@@ -149,14 +149,25 @@
                 .thumbnailTitle:hover {
                     text-decoration: underline;
                 }
-            .createDate {
+            .categoryThumb {
                 font-family: Arial, Helvetica, sans-serif;
                 font-weight: 500;
                 font-size: 11px;
-                /* letter-spacing: 1px; */
+                font-style: italic;
+                letter-spacing: 0.5px;
                 text-align: left;
-                color: #d6d6d6;
-                margin: 3px 6px 0px 2px;
+                color: #c4c4c4;
+                margin: 2px 6px 0px 2px;
+                text-decoration: none;
+            }
+            .createDateThumb {
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 500;
+                font-size: 11px;
+                letter-spacing: 0.5px;
+                text-align: left;
+                color: #c4c4c4;
+                margin: 2px 6px 0px 2px;
                 text-decoration: none;
             }
             .thumbnailEditDelete{
