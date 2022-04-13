@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { Button, Container, Form, FormFeedback, FormGroup, Input, Label } from "reactstrap";
 import { GalleryContext } from "../../providers/GalleryProvider";
 import { CategoryContext } from "../../providers/CategoryProvider";
+import './Gallery.css';
 
 const AddGalleryForm = () => {
 
     const { addGallery, getAllGalleries } = useContext(GalleryContext);
     const { categories, getAllCategories} = useContext(CategoryContext);
+    const [counter, setCounter] = useState(0);
 
+   
     const [gallery, setGallery] = useState({
         title: "",
         content: "",
@@ -38,21 +41,23 @@ const AddGalleryForm = () => {
     }
 
     const handleAddImageInputField = () => {
-        // let newInput = document.querySelector("#newImageInputField")
-        return (
-            <FormGroup >
-                <Label for="imageLocation" hidden>Image Location</Label>
-                <Input
-                    id="imageLocation"
-                    placeholder="Image 3 url"
-                    onChange={handleChangeInput}
-                    value={gallery.imageLocation}
-                />
-                <FormFeedback></FormFeedback>
-            </FormGroup>
-        )
+        // let newInput = document.querySelector("newImageInputField")
+        // return (
+        //     <FormGroup >
+        //         <Label for="imageLocation" hidden>Image Location</Label>
+        //         <Input
+        //             id="imageLocation"
+        //             placeholder="Image 3 url"
+        //             onChange={handleChangeInput}
+        //             value={gallery.imageLocation}
+        //         />
+        //         <FormFeedback></FormFeedback>
+        //     </FormGroup>
+        // )
+        setCounter(counter + 1);
+        console.log("counter:", counter);
     }
-    console.log(handleAddImageInputField)
+    // console.log(handleAddImageInputField)
 
     return (
         <Container className="pt-5">
@@ -89,19 +94,27 @@ const AddGalleryForm = () => {
                     />
                     <FormFeedback></FormFeedback>
                 </FormGroup>
-                <FormGroup>
-                    <Label for="imageLocation" hidden>Image Location</Label>
-                    <Input
-                        id="imageLocation"
-                        placeholder="Image 2 url"
-                        onChange={handleChangeInput}
-                        value={gallery.imageLocation}
-                    />
-                    <FormFeedback></FormFeedback>
-                </FormGroup>
-                <div id="newImageInputField"></div>
-                <Button className="btn-sm btn-warning my-3" onClick={handleAddImageInputField}>
-            Add another image</Button>
+
+                {/* Add an additional input field to add more images to Gallery */}
+                {Array.from(Array(counter)).map((c, index) => {
+                    return (
+                        <FormGroup key={c}>
+                            <Label for="imageLocation" hidden>Image Location</Label>
+                            <Input
+                                id="imageLocation"
+                                placeholder="Image url"
+                                onChange={handleChangeInput}
+                                value={gallery.imageLocation}
+                            />
+                            <FormFeedback></FormFeedback>
+                        </FormGroup>
+                    )
+                })}
+
+                <button type="button" className="addImageInputFieldBtn" 
+                    onClick={handleAddImageInputField}>
+                    Add another image
+                </button>
 
                 <FormGroup>
                     <Label for="CategoryId" hidden>Category</Label>
@@ -117,7 +130,8 @@ const AddGalleryForm = () => {
                     </Input>
                     <FormFeedback></FormFeedback>
                 </FormGroup>
-                <Button onClick={handleSave}>Submit</Button> 
+
+                <Button onClick={handleSave}>Save</Button> 
                 <Button className ="mx-3" onClick={() =>{navigate (`/mygallery`)} }>Cancel</Button>
             </Form>
         </Container>

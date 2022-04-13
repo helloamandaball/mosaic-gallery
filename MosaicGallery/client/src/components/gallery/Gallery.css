@@ -117,6 +117,25 @@
     margin: 30px 20px 20px auto;
 }
 
+.addImageInputFieldBtn {
+    display: block;
+    /* position: absolute; */
+    /* right: 0px; */
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    border-radius: 0.2rem;
+    padding: 0.25rem 0.5rem;
+    margin: 30px 1px 20px auto;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 /* Spacers */
 .spacer50 {
     height: 50px;

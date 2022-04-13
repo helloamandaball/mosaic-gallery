@@ -14,8 +14,8 @@ const GalleryList = () => {
     }, []);
 
     const handleRandomGalleryBtn = () => {
-            const galleryLength = galleries.length
-            let randomGallery = Math.floor(Math.random() * galleryLength)
+        const galleryLength = galleries.length
+        let randomGallery = Math.floor(Math.random() * galleryLength)
         navigate(`/gallery/${galleries[randomGallery].id}`)
     };
 
