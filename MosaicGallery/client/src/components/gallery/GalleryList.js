@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { GalleryContext } from "../../providers/GalleryProvider";
 import GalleryThumbnail from "./GalleryThumbnail";
+import './Gallery.css';
 
 const GalleryList = () => {
 

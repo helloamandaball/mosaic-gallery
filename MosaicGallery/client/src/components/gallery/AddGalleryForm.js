@@ -56,6 +56,7 @@ const AddGalleryForm = () => {
                     <Input
                         id="content"
                         placeholder="About this gallery..."
+                        className="aboutGalleryInput"
                         onChange={handleChangeInput}
                         value={gallery.content}
                         type="textarea"
