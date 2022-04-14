@@ -14,7 +14,7 @@ const EditGalleryForm = () => {
         content: "",
         imageLocation: "",
         createDateTime: new Date(),
-        categoryId: 15,
+        categoryId: "",
         userProfileId: JSON.parse(sessionStorage.getItem("userProfile")).id
     });
 
@@ -55,7 +55,7 @@ const EditGalleryForm = () => {
 
     return (
         <Container className="pt-5">
-            <h2>Edit Gallery: {gallery.title}</h2>
+            <h2>Edit Gallery Image: {gallery.title}</h2>
             <Form >
                 <FormGroup >
                     <Label for="title" hidden>Title</Label>

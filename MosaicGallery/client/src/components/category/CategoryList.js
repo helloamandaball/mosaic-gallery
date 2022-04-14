@@ -15,26 +15,27 @@ const CategoryList = () => {
         getAllCategories();
     }, []);
 
-    const handleNewGalleryBtn = () => {
+    const handleNewCategoryBtn = () => {
         navigate(`/categories/create`)
     };
 
     return (
         <>
-            <div className="categoryHeaderContainer">
-                <h4 className="categoryHeader">Categories</h4>
-                <button type="button" className="newCategoryBtn" onClick={handleNewGalleryBtn}>
+            <div className="categoryHeaderBlock">
+                <h3 className="categoryHeading">Categories</h3>
+                <button type="button" className="newCategoryBtn" onClick={handleNewCategoryBtn}>
                     New Category
                 </button>
-                <div className="spacer75">&nbsp;</div>
             </div>
-            <section className="categoryList">
+            <div className="spacer50">&nbsp;</div>
+            
+            <div className="categoryList">
                 {categories.map((category) => {
                     return (
                         <CategoryDetails key={category.id} category={category} />
                     )
                 }).sort()}
-            </section>
+            </div>
         </>
     );
 };
