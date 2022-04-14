@@ -130,12 +130,17 @@
     user-select: none;
     color: #000;
     background-color: #ffc107;
-    border-color: #ffc107;
+    border: 1px solid #ffc107;
     border-radius: 0.2rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.5rem;
     margin: 30px 1px 20px auto;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    /* transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
 }
+    .addImageInputFieldBtn:hover {
+        background-color: #fdbc0b;
+        border-color: #fdbc0b;
+    }
+
 /* Spacers */
 .spacer50 {
     height: 50px;

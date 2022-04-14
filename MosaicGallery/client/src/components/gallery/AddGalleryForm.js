@@ -85,38 +85,6 @@ const AddGalleryForm = () => {
                     <FormFeedback></FormFeedback>
                 </FormGroup>
                 <FormGroup>
-                    <Label for="imageLocation" hidden>Image Location</Label>
-                    <Input
-                        id="imageLocation"
-                        placeholder="Image 1 url"
-                        onChange={handleChangeInput}
-                        value={gallery.imageLocation}
-                    />
-                    <FormFeedback></FormFeedback>
-                </FormGroup>
-
-                {/* Add an additional input field to add more images to Gallery */}
-                {Array.from(Array(counter)).map((c, index) => {
-                    return (
-                        <FormGroup key={c}>
-                            <Label for="imageLocation" hidden>Image Location</Label>
-                            <Input
-                                id="imageLocation"
-                                placeholder="Image url"
-                                onChange={handleChangeInput}
-                                value={gallery.imageLocation}
-                            />
-                            <FormFeedback></FormFeedback>
-                        </FormGroup>
-                    )
-                })}
-
-                <button type="button" className="addImageInputFieldBtn" 
-                    onClick={handleAddImageInputField}>
-                    Add another image
-                </button>
-
-                <FormGroup>
                     <Label for="CategoryId" hidden>Category</Label>
                     <Input
                         id="categoryId"
@@ -130,6 +98,40 @@ const AddGalleryForm = () => {
                     </Input>
                     <FormFeedback></FormFeedback>
                 </FormGroup>
+
+                <p>Images:</p>
+                <FormGroup>
+                    <Label for="imageLocation" hidden>Image Location</Label>
+                    <Input
+                        id="imageLocation"
+                        placeholder="Image 1 url"
+                        onChange={handleChangeInput}
+                        value={gallery.imageLocation}
+                    />
+                    <FormFeedback></FormFeedback>
+                </FormGroup>
+
+                {/* Add an additional input field to add more images to Gallery */}
+                {Array.from(Array(counter)).map((c, index) => {
+                    return (
+                        <FormGroup>
+                            <Label for="imageLocation" hidden>Image Location</Label>
+                            <Input key={c}
+                                id="imageLocation"
+                                className={index.toString()}
+                                placeholder="Image url"
+                                onChange={handleChangeInput}
+                                value={gallery.imageLocation}
+                            />
+                            <FormFeedback></FormFeedback>
+                        </FormGroup>
+                    )
+                })}
+
+                <button type="button" className="addImageInputFieldBtn" 
+                    onClick={handleAddImageInputField}>
+                    Add another image
+                </button>
 
                 <Button onClick={handleSave}>Save</Button> 
                 <Button className ="mx-3" onClick={() =>{navigate (`/mygallery`)} }>Cancel</Button>
