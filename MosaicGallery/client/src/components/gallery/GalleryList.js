@@ -22,21 +22,21 @@ const GalleryList = () => {
 
     return (
         <>
-        <div className="mainContent">
-            <div className="galleryHeaderBlock">
-                <h3 className="galleryHeading">Galleries</h3>
-                <button type="button" className="newGalleryBtn" onClick={handleRandomGalleryBtn}>
-                    View Random Gallery
-                </button>
+            <div className="mainContent">
+                <div className="galleryHeaderBlock">
+                    <h3 className="galleryHeading">Galleries</h3>
+                    <button type="button" className="newGalleryBtn" onClick={handleRandomGalleryBtn}>
+                        View Random Gallery
+                    </button>
+                </div>
+                <div className="spacer25">&nbsp;</div>
+                
+                <div className="thumbnailListContainer">
+                    {galleries.map((gallery) => (
+                        <GalleryThumbnail key={gallery.id} gallery={gallery} />
+                    )).sort((a, b) => new Date(b.date) - new Date(a.date)).reverse()}
+                </div>
             </div>
-            <div className="spacer25">&nbsp;</div>
-            
-            <div className="thumbnailListContainer">
-                {galleries.map((gallery) => (
-                    <GalleryThumbnail key={gallery.id} gallery={gallery} />
-                )).sort((a, b) => new Date(b.date) - new Date(a.date)).reverse()}
-            </div>
-        </div>
         </>
     );
 };

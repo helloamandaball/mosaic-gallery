@@ -1,11 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Syncopate:wght@400;700&display=swap');
 
+/* Login Form */
+.loginContent{
+    max-width: 500px;
+    margin: 20% auto;
+    text-align: center;
+}
+    .loginInputFields {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .loginBtn {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: #17A2BA;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        width: 70px;
+        height: 40px;
+        padding: 3px 1px 1px;
+        margin: 30px auto 20px auto;
+    }
+    .loginBtn:hover {
+        background-color: #006e8c;
+    }
+    .registerLink {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.4px;
+    }
+
+/* Register Form */
+.registerContent{
+    max-width: 500px;
+    margin: 70px auto;
+    text-align: center;
+}
+    .registerHeading {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 28px;
+        text-align: left;
+        text-transform: uppercase;
+        border-bottom: 2px solid #d39c2f;
+        letter-spacing: 1px;
+        color: #7a7a7a;
+        width: 139px;
+        padding: 0px;
+        margin: 0 0 40px
+    }
+    .nameBlock {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nameInputField {
+        width: 48%;
+    }
+    .labelTxt {
+        text-align: left;
+    }
+    .registerBtn {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: #17A2BA;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        width: 90px;
+        height: 40px;
+        padding: 3px 1px 1px;
+        margin: 20px auto 20px auto;
+    }
+    .registerBtn:hover {
+        background-color: #006e8c;
+    }
+
 /* Header Nav */
+.nav {
+    padding: 0;
+    margin:0;
+}
 .navBarDiv {
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    padding: 0px 60px 0px 50px;
+    padding: 0px 50px 0px 40px;
     border-bottom: 1px solid #d6d6d6;
 }
     .navBarLinks {

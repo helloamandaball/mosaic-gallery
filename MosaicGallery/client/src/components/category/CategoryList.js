@@ -21,20 +21,22 @@ const CategoryList = () => {
 
     return (
         <>
-            <div className="categoryHeaderBlock">
-                <h3 className="categoryHeading">Categories</h3>
-                <button type="button" className="newCategoryBtn" onClick={handleNewCategoryBtn}>
-                    New Category
-                </button>
-            </div>
-            <div className="spacer50">&nbsp;</div>
-            
-            <div className="categoryList">
-                {categories.map((category) => {
-                    return (
-                        <CategoryDetails key={category.id} category={category} />
-                    )
-                }).sort()}
+            <div className="mainContent">
+                <div className="categoryHeaderBlock">
+                    <h3 className="categoryHeading">Categories</h3>
+                    <button type="button" className="newCategoryBtn" onClick={handleNewCategoryBtn}>
+                        New Category
+                    </button>
+                </div>
+                <div className="spacer50">&nbsp;</div>
+                
+                <div className="categoryList">
+                    {categories.map((category) => {
+                        return (
+                            <CategoryDetails key={category.id} category={category} />
+                        )
+                    }).sort()}
+                </div>
             </div>
         </>
     );
