@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faHeart, } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
+// import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { GalleryContext } from "../../providers/GalleryProvider";
 import './Gallery.css';
 
@@ -14,8 +14,8 @@ const MyGalleryThumbnail = ({ gallery }) => {
         getAllGalleries();
     }, []);
 
-    const handleFavorite = () => {
-    };
+    // const handleFavorite = () => {
+    // };
 
     return (
         <div className="thumbnailView">
@@ -28,11 +28,11 @@ const MyGalleryThumbnail = ({ gallery }) => {
                 <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
                     <p className="thumbnailTitle">{gallery.title}</p>
                 </Link>
-                <div className="thumbnailFavBlock">
+                {/* <div className="thumbnailFavBlock">
                     <button type="button" className="thumbnailFavBtn" id="gallery.id" onClick={handleFavorite}>
                     <FontAwesomeIcon icon={faHeart} />
                     </button>
-                </div>
+                </div> */}
             </div>
             <div>
                 <p className="categoryThumb">Category: {gallery.category.name}</p>

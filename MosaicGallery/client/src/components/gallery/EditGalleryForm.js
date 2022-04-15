@@ -14,7 +14,7 @@ const EditGalleryForm = () => {
         content: "",
         imageLocation: "",
         createDateTime: new Date(),
-        categoryId: 15,
+        categoryId: "",
         userProfileId: JSON.parse(sessionStorage.getItem("userProfile")).id
     });
 
@@ -55,13 +55,13 @@ const EditGalleryForm = () => {
 
     return (
         <Container className="pt-5">
-            <h2>Edit Gallery: {gallery.title}</h2>
+            <h2>Edit Gallery Image: {gallery.title}</h2>
             <Form >
                 <FormGroup >
                     <Label for="title" hidden>Title</Label>
                     <Input
                         id="title"
-                        placeholder="Title"
+                        placeholder="Gallery image title"
                         onChange={handleChangeInput}
                         value={gallery.title}
                     />
@@ -71,7 +71,8 @@ const EditGalleryForm = () => {
                     <Label for="content" hidden>Content</Label>
                     <Input
                         id="content"
-                        placeholder="Content"
+                        placeholder="About this gallery..."
+                        className="aboutGalleryInput"
                         onChange={handleChangeInput}
                         value={gallery.content}
                         type="textarea"
@@ -82,7 +83,7 @@ const EditGalleryForm = () => {
                     <Label for="imageLocation" hidden>Image Location</Label>
                     <Input
                         id="imageLocation"
-                        placeholder="Image Location"
+                        placeholder="Image url"
                         onChange={handleChangeInput}
                         value={gallery.imageLocation}
                     />

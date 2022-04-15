@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Syncopate:wght@400;700&display=swap');
+
+/* Login Form */
+.loginContent{
+    max-width: 500px;
+    margin: 18% auto;
+    text-align: center;
+}
+    .loginInputFields {
+        width: 300px;
+        margin: 0 auto;
+    }
+    .loginBtn {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: #17A2BA;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        width: 70px;
+        height: 40px;
+        padding: 3px 1px 1px;
+        margin: 30px auto 20px auto;
+    }
+    .loginBtn:hover {
+        background-color: #006e8c;
+    }
+    .registerLink {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.4px;
+    }
+.hdr {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 60px;
+        color: #840705
+}
+.hdrSpan {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 60px;
+        color: #17A2BA
+}
+
+/* Register Form */
+.registerContent{
+    max-width: 500px;
+    margin: 70px auto;
+    text-align: center;
+}
+    .registerHeading {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 28px;
+        text-align: left;
+        text-transform: uppercase;
+        border-bottom: 2px solid #d39c2f;
+        letter-spacing: 1px;
+        color: #7a7a7a;
+        width: 139px;
+        padding: 0px;
+        margin: 0 0 40px
+    }
+    .nameBlock {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nameInputField {
+        width: 48%;
+    }
+    .labelTxt {
+        text-align: left;
+    }
+    .registerBtn {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: #17A2BA;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        width: 90px;
+        height: 40px;
+        padding: 3px 1px 1px;
+        margin: 20px auto 20px auto;
+    }
+    .registerBtn:hover {
+        background-color: #006e8c;
+    }
+
+/* Header Nav */
+.nav {
+    padding: 0;
+    margin:0;
+}
+.navBarDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 0px 50px 0px 40px;
+    border-bottom: 1px solid #d6d6d6;
+}
+    .navBarLinks {
+
+    }
+    .navLinkName {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        padding: 0px;
+        margin: 10px 10px 10px 20px;
+    }
+        .navLinkName.active {
+            border-bottom: 2px solid #ffc107;
+            border-bottom: 2px solid #77aa77;
+        }
+
+    .logoutBtn {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        background-color: transparent;
+        color: #000;
+        border: 1px solid #6c757d;
+        border-radius: 3px;
+        width: 84px;
+        height: 40px;
+        padding: 1px 1px 1px;
+        margin: 20px 1px 20px 40px;
+    }.logoutBtn:hover {
+        /* background-color: #f8f9fa; */
+        background-color: #e7e7e7;
+        border-color: #d6d6d6;
+    }
+
+/* Spacers */
+.spacer25 {
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+}
+.spacer50 {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+}
+.spacer75 {
+    height: 75px;
+    width: 75px;
+    background-color: transparent;
+}
+
+/* Footer */
+footer {
+    position:fixed;
+    left:0;
+    bottom:0;
+    width: 100vw;
+    background-color: #FFF;
+    padding: 10px 0 15px;
+    margin-top: 30px;
+}
+
+    .footer {
+        background-color: #FFF;
+        border-top: 1px solid #eef1f5;
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footerDiv {
+        display: flex;
+        margin: 10px 0 20px auto;
+    }
+
+    .byLogoImg {
+        width: 60px;
+        height: auto;
+        margin: 5px 26px 5px 7px;
+    }
+
+    .footerText {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: right;
+        color: #9fafc1;
+        margin: 12px 0px 0px;
+    }
+
+    .littleEmblem {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 36px;
+        color: #eef1f5;
+        margin: 5px 0 0 26px;
+    }
+
+    .versionText {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        text-align: center;
+        color: #9fafc1;
+        margin: 12px 0px 0px;
+    }
+
+    @media only screen and (max-width: 780px) {
+        .navBarDiv {
+            width: 100vw;
+            padding: 0px 40px 0px 30px;
+        }
+        .navLinkName {
+            margin: 10px 10px 10px 10px;
+        }
+        .logoutBtn {
+            margin: 20px 1px 20px 20px;
+        }
+    }
