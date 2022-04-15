@@ -30,8 +30,8 @@ export function UserProfileProvider(props) {
     };
 
     const register = (userObject, password) => {
-        return fetch(`${apiUrl}/api/userprofile/getbyemail?email=${userObject.email}`)
-        .then((r) => r.json())
+        return fetch(`${apiUrl}/api/UserProfile/GetByEmail?email=${userObject.email}`)
+        // .then((r) => r.json())
         .then((userProfile) => {
             if (userProfile.id) {
                 return userProfile

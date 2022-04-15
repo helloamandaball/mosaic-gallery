@@ -26,6 +26,8 @@ export default function Login() {
 
     return (
         <div className="loginContent">
+            <p className="hdr">Mosaic <span className="hdrSpan">Gallery</span></p>
+            <br />
             <Form onSubmit={loginSubmit}>
                 <fieldset>
                     <FormGroup className="loginInputFields">
