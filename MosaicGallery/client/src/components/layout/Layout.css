@@ -127,8 +127,22 @@
         margin: 10px 10px 10px 20px;
     }
         .navLinkName.active {
-            border-bottom: 2px solid #ffc107;
             border-bottom: 2px solid #77aa77;
+        }
+        .navLinkName.goldLink.active {
+            border-bottom: 2px solid #d39c2f;
+        }
+        .navLinkName.aquaLink.active {
+            border-bottom: 2px solid #17a2ba;
+        }
+        .navLinkName.sageLink.active {
+            border-bottom: 2px solid #77aa77;
+        }
+        .navLinkName.plumLink.active {
+            border-bottom: 2px solid #841c6f;
+        }
+        .navLinkName.brickLink.active {
+            border-bottom: 2px solid #840705;
         }
 
     .logoutBtn {
@@ -223,7 +237,7 @@ footer {
         margin: 12px 0px 0px;
     }
 
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 820px) {
         .navBarDiv {
             width: 100vw;
             padding: 0px 40px 0px 30px;

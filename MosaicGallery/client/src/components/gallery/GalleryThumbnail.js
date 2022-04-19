@@ -1,21 +1,33 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faHeart, } from '@fortawesome/free-solid-svg-icons';
 // import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { GalleryContext } from "../../providers/GalleryProvider";
+import { FavoritesContext } from "../../providers/FavoritesProvider";
 import './Gallery.css';
 
-const MyGalleryThumbnail = ({ gallery }) => {
+const GalleryThumbnail = ({ gallery, favorites }) => {
 
     const { getAllGalleries } = useContext(GalleryContext);
+    const { getAllFavsByUser, addToFavs, deleteFromFavs } = useContext(FavoritesContext);
+
+    const  [isClicked, setClicked ] = useState(false);
 
     useEffect(() => {
-        getAllGalleries();
+        getAllGalleries()
+        .then(getAllFavsByUser);
     }, []);
 
-    // const handleFavorite = () => {
-    // };
+    const handleAddToFavs = () => {
+        addToFavs(gallery.id)
+        .then(setClicked(!isClicked));
+    };
+
+    const handleDeleteFromFavs = () => {
+        deleteFromFavs(gallery.id)
+        .then(setClicked(isClicked));
+    };
 
     return (
         <div className="thumbnailView">
@@ -28,11 +40,14 @@ const MyGalleryThumbnail = ({ gallery }) => {
                 <Link to={`/gallery/${gallery.id}`} style={{ textDecoration: "none" }}>
                     <p className="thumbnailTitle">{gallery.title}</p>
                 </Link>
-                {/* <div className="thumbnailFavBlock">
-                    <button type="button" className="thumbnailFavBtn" id="gallery.id" onClick={handleFavorite}>
-                    <FontAwesomeIcon icon={faHeart} />
+                <div className="thumbnailFavBlock">
+                    <button type="button" id="gallery.id" 
+                    className={isClicked ? 'thumbnailFavBtnClicked' : 'thumbnailFavBtn'} 
+                    onClick={handleAddToFavs}>
+                        {/* <FontAwesomeIcon icon={faHeart} /> */}
+                        &#10084;
                     </button>
-                </div> */}
+                </div>
             </div>
             <div>
                 <p className="categoryThumb">Category: {gallery.category.name}</p>
@@ -43,4 +58,4 @@ const MyGalleryThumbnail = ({ gallery }) => {
     )
 }
 
-export default MyGalleryThumbnail;
+export default GalleryThumbnail;

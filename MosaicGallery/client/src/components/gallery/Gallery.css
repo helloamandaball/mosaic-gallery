@@ -19,11 +19,26 @@
         font-size: 28px;
         text-align: left;
         text-transform: uppercase;
-        border-bottom: 2px solid #d39c2f;
+        /* border-bottom: 2px solid #d39c2f; */
         letter-spacing: 1px;
         color: #7a7a7a;
         padding-top: 20px;
     }
+        .underlineAqua {
+            border-bottom: 2px solid #17a2ba;
+        }
+        .underlineSage {
+            border-bottom: 2px solid #77aa77;
+        }
+        .underlineGold {
+            border-bottom: 2px solid #d39c2f;
+        }
+        .underlinePlum {
+            border-bottom: 2px solid #841c6f;
+        }
+        .underlineBrick {
+            border-bottom: 2px solid #840705;
+        }
     .newGalleryBtn {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 400;
@@ -44,6 +59,11 @@
     white-space: pre-wrap !important;
 }
 /* Spacers */
+.spacer13 {
+    height: 13px;
+    width: 13px;
+    background-color: transparent;
+}
 .spacer25 {
     height: 25px;
     width: 25px;
@@ -158,6 +178,7 @@
             }
                 .thumbnailEditBtn, .thumbnailDeleteBtn {
                     display: inline-block;
+                    font-family: Arial, Helvetica, sans-serif;
                     font-size: 14px;
                     line-height: 1.5;
                     user-select: none;
@@ -175,20 +196,45 @@
             }
                 .thumbnailFavBtn {
                     display: inline-block;
+                    font-family: Arial, Helvetica, sans-serif;
                     font-size: 16px;
                     line-height: 1.5;
                     user-select: none;
-                    color: #a8a8a8;
+                    color: #d6d6d6;
                     background-color: transparent;
                     border: none;
                     padding: 1px 4px;
                     border-radius: 0;
+                    -webkit-text-fill-color: #fff; /* Will override color (regardless of order) */
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #d6d6d6;
                 }
-                .thumbnailFavBtn:hover {
-                    font-size: 18px;
-                    line-height: 1.35;
-                    color: #7a7a7a;
+                    .thumbnailFavBtn:hover {
+                        color: #d6d6d6;
+                        -webkit-text-fill-color: #d6d6d6; /* Will override color (regardless of order) */
+                        -webkit-text-stroke-width: 1px;
+                        -webkit-text-stroke-color: #d6d6d6;
+                    }
+                .thumbnailFavBtnClicked {
+                    display: inline-block;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    user-select: none;
+                    color: #840705;
+                    background-color: transparent;
+                    border: none;
+                    padding: 1px 4px;
+                    -webkit-text-fill-color: #840705; /* Will override color (regardless of order) */
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: #840705;
                 }
+                    .thumbnailFavBtnClicked:hover {
+                        color: #840705;
+                        -webkit-text-fill-color: #840705; /* Will override color (regardless of order) */
+                        -webkit-text-stroke-width: 1px;
+                        -webkit-text-stroke-color: #840705;
+                    }
 
 /* Details View Page */
 .textContent {

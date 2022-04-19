@@ -20,6 +20,7 @@ const MyGalleryThumbnail = ({ gallery }) => {
         if (confirmDelete) {
             deleteGallery(gallery.id)
                 .then(getAllGalleries)
+                .then(window.location.reload(false))
                 .then(navigate(`/mygallery`));
         } else {
             navigate(`/mygallery`)

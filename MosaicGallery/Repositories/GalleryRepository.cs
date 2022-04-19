@@ -270,7 +270,7 @@ namespace MosaicGallery.Repositories
                     UserType = new UserType()
                     {
                         Id = DbUtils.GetInt(reader, "UserTypeId"),
-                        Name = DbUtils.GetString(reader, "Name")
+                        Name = DbUtils.GetString(reader, "UserType")
                     }
                 },
             };

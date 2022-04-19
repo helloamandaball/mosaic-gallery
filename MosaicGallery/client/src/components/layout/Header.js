@@ -29,19 +29,19 @@ export default function Header() {
                                 </NavItem> */}
 
                             <NavItem>
-                                <NavLink tag={RRNavLink} to="/mygallery" className="navLinkName">my gallery</NavLink>
+                                <NavLink tag={RRNavLink} to="/mygallery" className="navLinkName goldLink">my gallery</NavLink>
                             </NavItem>
 
                             <NavItem>
-                                {/* <NavLink tag={RRNavLink} to="/favorites" className="navLinkName">favorites</NavLink> */}
+                                <NavLink tag={RRNavLink} to="/favorites" className="navLinkName aquaLink">favorites</NavLink>
                             </NavItem>
 
                             <NavItem>
-                                <NavLink tag={RRNavLink} to="/discover" className="navLinkName">discover</NavLink>
+                                <NavLink tag={RRNavLink} to="/discover" className="navLinkName sageLink">discover</NavLink>
                             </NavItem>
 
                             <NavItem>
-                                <NavLink tag={RRNavLink} to="/categories" className="navLinkName">categories</NavLink>
+                                <NavLink tag={RRNavLink} to="/categories" className="navLinkName brickLink">categories</NavLink>
                             </NavItem>
 
                             {/* <NavItem>

@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer';
 import { UserProfileProvider } from './providers/UserProfileProvider';
 import { GalleryProvider } from './providers/GalleryProvider';
 import { CategoryProvider } from './providers/CategoryProvider';
+import { FavoritesProvider } from './providers/FavoritesProvider';
 import './GalleryApp.css';
 
 function GalleryApp() {
@@ -14,9 +15,11 @@ function GalleryApp() {
             <UserProfileProvider>
             <GalleryProvider>
             <CategoryProvider>
+            <FavoritesProvider>
                 <Header />
                 <ApplicationViews />
                 <Footer />
+            </FavoritesProvider>
             </CategoryProvider>
             </GalleryProvider>
             </UserProfileProvider>
