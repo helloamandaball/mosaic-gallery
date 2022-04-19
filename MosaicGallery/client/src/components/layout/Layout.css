@@ -96,6 +96,15 @@
     }
 
 /* Header Nav */
+    /* Bootstrap class overrides */
+    .navbar {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .container-fluid {
+        padding: 0 !important;
+    }
+    
 .nav {
     padding: 0;
     margin:0;

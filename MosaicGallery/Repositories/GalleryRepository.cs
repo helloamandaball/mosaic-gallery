@@ -24,7 +24,7 @@ namespace MosaicGallery.Repositories
                         SELECT g.Id AS GalleryId, g.Title, g.CreateDateTime, g.Content, g.ImageLocation,
                                c.Id AS CategoryId, c.[Name],
                                up.Id AS UserProfileId, up.FirstName, up.LastName, up.Username, up.Email,
-                               up.CreateDateTime, up.ImageLocation, up.UserTypeId,
+                               up.CreateDateTime, up.ImageLocation AS AvatarImage, up.UserTypeId,
                                ut.Id AS UserTypeId, ut.[Name] AS 'UserType'
                           FROM Gallery g
                      LEFT JOIN Category c ON c.Id = g.CategoryId
@@ -59,7 +59,7 @@ namespace MosaicGallery.Repositories
                         SELECT g.Id AS GalleryId, g.Title, g.CreateDateTime, g.Content, g.ImageLocation,
                                c.Id AS CategoryId, c.[Name],
                                up.Id AS UserProfileId, up.FirstName, up.LastName, up.Username, up.Email,
-                               up.CreateDateTime, up.ImageLocation, up.UserTypeId,
+                               up.CreateDateTime, up.ImageLocation AS AvatarImage, up.UserTypeId,
                                ut.Id AS UserTypeId, ut.[Name] AS 'UserType'
                           FROM Gallery g
                      LEFT JOIN Category c ON c.Id = g.CategoryId
@@ -97,7 +97,7 @@ namespace MosaicGallery.Repositories
                         SELECT g.Id AS GalleryId, g.Title, g.CreateDateTime, g.Content, g.ImageLocation,
                                c.Id AS CategoryId, c.[Name],
                                up.Id AS UserProfileId, up.FirstName, up.LastName, up.Username, up.Email,
-                               up.CreateDateTime, up.ImageLocation, up.UserTypeId,
+                               up.CreateDateTime, up.ImageLocation AS AvatarImage, up.UserTypeId,
                                ut.Id AS UserTypeId, ut.[Name] AS 'UserType'
                           FROM Gallery g
                      LEFT JOIN Category c ON c.Id = g.CategoryId
@@ -134,7 +134,7 @@ namespace MosaicGallery.Repositories
                         SELECT g.Id AS GalleryId, g.Title, g.CreateDateTime, g.Content, g.ImageLocation,
                                c.Id AS CategoryId, c.[Name],
                                up.Id AS UserProfileId, up.FirstName, up.LastName, up.Username, up.Email,
-                               up.CreateDateTime, up.ImageLocation, up.UserTypeId,
+                               up.CreateDateTime, up.ImageLocation AS AvatarImage, up.UserTypeId,
                                ut.Id AS UserTypeId, ut.[Name] AS 'UserType'
                           FROM Gallery g
                      LEFT JOIN Category c ON c.Id = g.CategoryId
@@ -265,7 +265,7 @@ namespace MosaicGallery.Repositories
                     LastName = DbUtils.GetString(reader, "LastName"),
                     Email = DbUtils.GetString(reader, "Email"),
                     CreateDateTime = DbUtils.GetDateTime(reader, "CreateDateTime"),
-                    ImageLocation = DbUtils.GetString(reader, "ImageLocation"),
+                    ImageLocation = DbUtils.GetString(reader, "AvatarImage"),
                     UserTypeId = DbUtils.GetInt(reader, "UserTypeId"),
                     UserType = new UserType()
                     {
