@@ -3,6 +3,7 @@ import { NavLink as RRNavLink } from "react-router-dom";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 // import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { UserProfileContext } from "../../providers/UserProfileProvider";
+import mgLogoSm from ".././images/mgLogoSm.png"
 import './Layout.css'
 
 export default function Header() {
@@ -16,8 +17,11 @@ export default function Header() {
             {isLoggedIn &&
               <>
               <Navbar color="light" light expand="md" className="navBarDiv">
-                  <div className="spacer25"></div>
-                <NavbarBrand tag={RRNavLink} to="/">Mosaic Gallery</NavbarBrand>
+                <div className="spacer25"></div>
+                <NavbarBrand tag={RRNavLink} to="/">
+                    {/* Mosaic Gallery */}
+                    <img src={mgLogoSm} alt="Mosaic Gallery" className="navLogo" />
+                </NavbarBrand>
 
                 <div className="navBarLinks">
                     <NavbarToggler onClick={toggle} />

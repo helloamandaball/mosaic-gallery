@@ -3,9 +3,14 @@
 /* Login Form */
 .loginContent{
     max-width: 500px;
-    margin: 18% auto;
+    margin: 16% auto 18%;
     text-align: center;
 }
+    .loginLogo {
+        width: 100%;
+        height: auto;
+        margin: 0 auto 90px;
+    }
     .loginInputFields {
         width: 300px;
         margin: 0 auto;
@@ -47,6 +52,7 @@
         font-size: 60px;
         color: #17A2BA
 }
+
 
 /* Register Form */
 .registerContent{
@@ -163,7 +169,17 @@
         border-color: #d6d6d6;
     }
 
+.navLogo {
+    width: 190px;
+    height: auto;
+}
+
 /* Spacers */
+.spacer10 {
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+}
 .spacer25 {
     height: 25px;
     width: 25px;
@@ -237,7 +253,7 @@ footer {
         margin: 12px 0px 0px;
     }
 
-    @media only screen and (max-width: 820px) {
+    @media only screen and (max-width: 900px) {
         .navBarDiv {
             width: 100vw;
             padding: 0px 40px 0px 30px;
@@ -247,5 +263,9 @@ footer {
         }
         .logoutBtn {
             margin: 20px 1px 20px 20px;
+        }
+        .navLinkName{
+            font-size: 1.8vw;
+            padding: 1px;
         }
     }
