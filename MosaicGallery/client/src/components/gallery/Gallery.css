@@ -57,6 +57,7 @@
 
 .aboutGalleryInput {
     white-space: pre-wrap !important;
+    white-space: pre-line !important;
 }
 /* Spacers */
 .spacer13 {

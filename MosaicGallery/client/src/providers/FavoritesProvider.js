@@ -9,8 +9,8 @@ export const FavoritesProvider = (props) => {
     const [favorites, setFavorites] = useState([]);
 
     // Get All Favorite Galleries by Current User
-    const getAllFavsByUser = (id) => {
-        return fetch(`${apiUrl}/api/favorites?userprofileid=${id}`)
+    const getAllFavsByUser = (userId) => {
+        return fetch(`${apiUrl}/api/favorites?userprofileid=${userId}`)
             .then((res) => res.json())
             .then(setFavorites);
     };

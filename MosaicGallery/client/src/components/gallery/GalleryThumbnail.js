@@ -12,22 +12,32 @@ const GalleryThumbnail = ({ gallery, favorites }) => {
     const { getAllGalleries } = useContext(GalleryContext);
     const { getAllFavsByUser, addToFavs, deleteFromFavs } = useContext(FavoritesContext);
 
+    const currentUser = JSON.parse(sessionStorage.getItem("userProfile"));
     const  [isClicked, setClicked ] = useState(false);
 
-    useEffect(() => {
-        getAllGalleries()
-        .then(getAllFavsByUser);
-    }, []);
+    // useEffect(() => {
+    //     getAllGalleries()
+    //     .then(() => getAllFavsByUser(currentUser.id));
+    // }, []);
 
-    const handleAddToFavs = () => {
-        addToFavs(gallery.id)
-        .then(setClicked(!isClicked));
-    };
+    // const handleAddToFavs = () => {
+    //     addToFavs(currentUser.id)
+    //     .then(setClicked(!isClicked));
+    // };
 
-    const handleDeleteFromFavs = () => {
-        deleteFromFavs(gallery.id)
-        .then(setClicked(isClicked));
-    };
+    // const handleDeleteFromFavs = () => {
+    //     deleteFromFavs(gallery.id)
+    //     .then(setClicked(isClicked));
+    // };
+
+    const handleFav = () =>{
+        setClicked(!isClicked)
+        if(isClicked === true){
+            addToFavs(gallery.id)
+        }else {
+            deleteFromFavs(gallery.id)
+        }
+    }
 
     return (
         <div className="thumbnailView">
@@ -43,16 +53,16 @@ const GalleryThumbnail = ({ gallery, favorites }) => {
                 <div className="thumbnailFavBlock">
                     <button type="button" id="gallery.id" 
                     className={isClicked ? 'thumbnailFavBtnClicked' : 'thumbnailFavBtn'} 
-                    onClick={handleAddToFavs}>
+                    onClick={handleFav}>
                         {/* <FontAwesomeIcon icon={faHeart} /> */}
                         &#10084;
                     </button>
                 </div>
             </div>
             <div>
-                <p className="categoryThumb">Category: {gallery.category.name}</p>
+                <p className="categoryThumb">Category: {gallery.category?.name}</p>
                 {/* <p className="createDateThumb">Created on: {gallery.createDateTime}</p> */}
-                <p className="createdByThumb">Created by: {gallery.userProfile.fullName}</p>
+                <p className="createdByThumb">Created by: {gallery.userProfile?.fullName}</p>
             </div>
         </div>
     )

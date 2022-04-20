@@ -37,7 +37,7 @@ CREATE TABLE [UserProfile] (
 CREATE TABLE [Gallery] (
   [Id] int PRIMARY KEY IDENTITY(1, 1),
   [Title] nvarchar(255),
-  [Content] nvarchar(255),
+  [Content] nvarchar(3000),
   [ImageLocation] nvarchar(255),
   [CreateDateTime] datetime,
   [CategoryId] int,
