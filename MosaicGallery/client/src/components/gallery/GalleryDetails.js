@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardImg, CardBody } from "reactstrap";
 import { GalleryContext } from "../../providers/GalleryProvider";
 import './Gallery.css';
@@ -9,7 +9,7 @@ const GalleryDetails = ({ gallery }) => {
 
     const [singleGallery, setSingleGallery] = useState();
     const { id } = useParams();
-
+    const navigate = useNavigate();
     useEffect(() => {
         if (!gallery) {
             getSingleGalleryById(id)
@@ -21,7 +21,10 @@ const GalleryDetails = ({ gallery }) => {
 
     return (
         <div className="container">
-            <Card className="mt-4">
+            <div className="headerDetailsAndBtn">
+                <button type="button" className="goBackBtn" onClick={() => navigate(-1)}>Go Back</button>
+            </div>
+            <Card className="mt-4 detailsCard">
                 <CardImg src={singleGallery?.imageLocation} alt={singleGallery?.title} />
                 <div className="textContent">
                     <h3 className="galleryHeader text-left px-2">
@@ -42,7 +45,7 @@ const GalleryDetails = ({ gallery }) => {
                     </div>
                 </div>
             </Card>
-    </div>
+        </div>
     );
 };
 

@@ -4,11 +4,38 @@
     margin: 0px 50px;
 }
 
+.headerDetailsAndBtn {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 910px;
+    align-items: flex-end;
+    margin: 10px auto 0px auto;
+}
+    .goBackBtn {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: #17a2ba;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        width: 100px;
+        height: 40px;
+        /* position: absolute;
+        right: 30px; */
+        padding: 3px 1px 1px;
+        margin: 30px 1px 20px auto;
+    }
+.detailsCard {
+    max-width: 910px;
+    margin: 0 auto;
+}
 .galleryHeaderBlock {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 910px;
     align-items: center;
     margin: 30px auto 5px;
 }

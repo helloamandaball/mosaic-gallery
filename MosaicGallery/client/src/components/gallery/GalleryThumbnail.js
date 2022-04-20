@@ -12,13 +12,7 @@ const GalleryThumbnail = ({ gallery, favorites }) => {
     const { getAllGalleries } = useContext(GalleryContext);
     const { getAllFavsByUser, addToFavs, deleteFromFavs } = useContext(FavoritesContext);
 
-    const currentUser = JSON.parse(sessionStorage.getItem("userProfile"));
-    const  [isClicked, setClicked ] = useState(false);
-
-    // useEffect(() => {
-    //     getAllGalleries()
-    //     .then(() => getAllFavsByUser(currentUser.id));
-    // }, []);
+    const  [ isClicked, setClicked ] = useState(false);
 
     // const handleAddToFavs = () => {
     //     addToFavs(currentUser.id)
@@ -34,7 +28,7 @@ const GalleryThumbnail = ({ gallery, favorites }) => {
         setClicked(!isClicked)
         if(isClicked === true){
             addToFavs(gallery.id)
-        }else {
+        } else {
             deleteFromFavs(gallery.id)
         }
     }
