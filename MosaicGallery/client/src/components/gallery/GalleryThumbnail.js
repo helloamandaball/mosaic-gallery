@@ -14,21 +14,31 @@ const GalleryThumbnail = ({ gallery, favorites }) => {
 
     const  [ isClicked, setClicked ] = useState(false);
 
-    // const handleAddToFavs = () => {
-    //     addToFavs(currentUser.id)
-    //     .then(setClicked(!isClicked));
-    // };
+    const user = JSON.parse(sessionStorage.getItem("userProfile"))
 
-    // const handleDeleteFromFavs = () => {
-    //     deleteFromFavs(gallery.id)
-    //     .then(setClicked(isClicked));
-    // };
+    const [faved, setFaved] = useState({
+        galleryId: gallery.id,
+        createDateTime: new Date(),
+        userProfileId: user.id
+    });
+
+    useEffect(() => {
+        if(isClicked){
+            debugger
+            addToFavs(faved)
+            .then(() => getAllFavsByUser(user.id))
+        }
+    }, [isClicked])
 
     const handleFav = () =>{
-        setClicked(!isClicked)
+        debugger;
+        setClicked(true)
         if(isClicked === true){
-            addToFavs(gallery.id)
+            // debugger
+            // addToFavs(faved)
+            // .then(() => getAllFavsByUser(user.id))
         } else {
+            debugger
             deleteFromFavs(gallery.id)
         }
     }
@@ -51,6 +61,10 @@ const GalleryThumbnail = ({ gallery, favorites }) => {
                         {/* <FontAwesomeIcon icon={faHeart} /> */}
                         &#10084;
                     </button>
+                    
+                    {/* Checkbox attempt */}
+                    {/* <input type="checkbox" label="Favorite" value={isClicked} onChange={handleFav} /> */}
+
                 </div>
             </div>
             <div>

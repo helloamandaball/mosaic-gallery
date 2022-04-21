@@ -7,8 +7,9 @@
     text-align: center;
 }
     .loginLogo {
-        width: 100%;
+        width: 110%;
         height: auto;
+        padding-right: 70px;
         margin: 0 auto 90px;
     }
     .loginInputFields {
@@ -51,6 +52,28 @@
         font-style: normal;
         font-size: 60px;
         color: #17A2BA
+}
+
+/* Welcome Scree */
+.welcomeHdr {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 36px;
+        color: #841c6f
+}
+    .welcomeHdrSpan {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 48px;
+        color: #840705
+    }
+.welcomeLogo {
+    width: 42%;
+    height: auto;
+    padding-right: 70px;
+    margin: 20px auto 0;
 }
 
 

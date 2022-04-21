@@ -8,6 +8,8 @@ const GalleryList = () => {
 
     const { galleries, getAllGalleries } = useContext(GalleryContext);
 
+
+
     const navigate = useNavigate();
 
     useEffect(() => {

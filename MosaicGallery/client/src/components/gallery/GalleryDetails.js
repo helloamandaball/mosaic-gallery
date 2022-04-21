@@ -10,6 +10,7 @@ const GalleryDetails = ({ gallery }) => {
     const [singleGallery, setSingleGallery] = useState();
     const { id } = useParams();
     const navigate = useNavigate();
+    
     useEffect(() => {
         if (!gallery) {
             getSingleGalleryById(id)
