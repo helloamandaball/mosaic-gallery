@@ -35,7 +35,7 @@ namespace MosaicGallery.Controllers
 
         // DELETE FROM FAVORITES
         // DELETE api/<FavoritesController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{galleryId}")]
         public IActionResult Delete(int galleryId)
         {
             _favoritesRepository.DeleteFromFavs(galleryId);

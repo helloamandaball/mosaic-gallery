@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { GalleryContext } from "../../providers/GalleryProvider";
 import { FavoritesContext } from "../../providers/FavoritesProvider";
 import GalleryThumbnail from "../gallery/GalleryThumbnail";
-import '../gallery/Gallery.css';
+import FavoriteThumbnail from "./FavoriteThumbnail"
+import '.././gallery/Gallery.css';
 
 const FavoritesList = () => {
     const { galleries, getAllGalleries } = useContext(GalleryContext);
@@ -41,7 +42,7 @@ const FavoritesList = () => {
                 
                 <div className="thumbnailListContainer">
                     {userFavorites.map((gallery) => (
-                        <GalleryThumbnail key={gallery.id} gallery={gallery} />
+                        <FavoriteThumbnail key={gallery.id} gallery={gallery} />
                     )).sort((a, b) => new Date(b.date) - new Date(a.date)).reverse()}
                 </div>
             </div>

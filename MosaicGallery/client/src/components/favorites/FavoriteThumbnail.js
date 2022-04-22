@@ -1,46 +1,36 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faHeart, } from '@fortawesome/free-solid-svg-icons';
 // import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { GalleryContext } from "../../providers/GalleryProvider";
 import { FavoritesContext } from "../../providers/FavoritesProvider";
-import './Gallery.css';
+import '.././gallery/Gallery.css';
 
 const GalleryThumbnail = ({ gallery, favorites }) => {
 
     const { getAllGalleries } = useContext(GalleryContext);
-    const { getAllFavsByUser, addToFavs, deleteFromFavs } = useContext(FavoritesContext);
+    const { getAllFavsByUser, deleteFromFavs } = useContext(FavoritesContext);
 
-    const  [ isClicked, setClicked ] = useState(false);
+    const  [ isFavorited, setFavorited ] = useState(true);
+
+    const navigate = useNavigate();
 
     const currentUser = JSON.parse(sessionStorage.getItem("userProfile"))
 
-    const [faved, setFaved] = useState({
-        galleryId: gallery.id,
-        createDateTime: new Date(),
-        userProfileId: currentUser.id
-    });
 
-    useEffect(() => {
-        if(isClicked){
-            // debugger
-            addToFavs(faved)
-            .then(() => getAllFavsByUser(currentUser.id))
-        }
-    }, [isClicked])
-
-    const handleFav = () =>{
-        // debugger;
-        setClicked(true)
-        // if(isClicked === true){
-        //     // debugger
-        //     // addToFavs(faved)
-        //     // .then(() => getAllFavsByUser(user.id))
-        // } else {
-        //     // debugger
+    const handleUnFav = () =>{
+        // var confirmDelete = window.confirm("Are you sure you want to delete the gallery: " + (gallery.title) + "?")
+        // if (confirmDelete) {
         //     deleteFromFavs(gallery.id)
+        //     .then(getAllGalleries)
+        //     .then(window.location.reload(false))
+        //     .then(navigate(`/favorites`))
+        // }else {
+        //     navigate(`/favorites`)
         // }
+        deleteFromFavs(gallery.id)
+        .then(getAllFavsByUser(currentUser.id))
     }
 
     return (
@@ -56,8 +46,8 @@ const GalleryThumbnail = ({ gallery, favorites }) => {
                 </Link>
                 <div className="thumbnailFavBlock">
                     <button type="button" id="gallery.id" 
-                    className={isClicked ? 'thumbnailFavBtnClicked' : 'thumbnailFavBtn'} 
-                    onClick={handleFav}>
+                    className={isFavorited ? 'thumbnailFavBtnClicked' : 'thumbnailFavBtn'} 
+                    onClick={handleUnFav}>
                         {/* <FontAwesomeIcon icon={faHeart} /> */}
                         &#10084;
                     </button>
