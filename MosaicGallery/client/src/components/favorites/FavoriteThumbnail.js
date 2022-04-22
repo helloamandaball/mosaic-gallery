@@ -26,7 +26,7 @@ const GalleryThumbnail = ({ gallery, favorites }) => {
         //     .then(getAllGalleries)
         //     .then(window.location.reload(false))
         //     .then(navigate(`/favorites`))
-        // }else {
+        // } else {
         //     navigate(`/favorites`)
         // }
         deleteFromFavs(gallery.id)
