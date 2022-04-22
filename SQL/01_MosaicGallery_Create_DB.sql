@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS [UserProfile];
 DROP TABLE IF EXISTS [Gallery];
 DROP TABLE IF EXISTS [GalleryTag];
 DROP TABLE IF EXISTS [Comment];
-DROP TABLE IF EXISTS [Favorite];
+DROP TABLE IF EXISTS [Favorites];
 GO
 
 CREATE TABLE [Category] (
@@ -37,7 +37,7 @@ CREATE TABLE [UserProfile] (
 CREATE TABLE [Gallery] (
   [Id] int PRIMARY KEY IDENTITY(1, 1),
   [Title] nvarchar(255),
-  [Content] nvarchar(255),
+  [Content] nvarchar(3000),
   [ImageLocation] nvarchar(255),
   [CreateDateTime] datetime,
   [CategoryId] int,
@@ -59,7 +59,7 @@ CREATE TABLE [Comment] (
   [CreateDateTime] datetime
 )
 
-CREATE TABLE [Favorite] (
+CREATE TABLE [Favorites] (
   [Id] int PRIMARY KEY IDENTITY(1, 1),
   [GalleryId] int,
   [UserProfileId] int,
@@ -74,10 +74,10 @@ GO
 ALTER TABLE [Comment] ADD FOREIGN KEY ([UserProfileId]) REFERENCES [UserProfile] ([Id])
 GO
 
-ALTER TABLE [Favorite] ADD FOREIGN KEY ([UserProfileId]) REFERENCES [UserProfile] ([Id])
+ALTER TABLE [Favorites] ADD FOREIGN KEY ([UserProfileId]) REFERENCES [UserProfile] ([Id])
 GO
 
-ALTER TABLE [Favorite] ADD FOREIGN KEY ([GalleryId]) REFERENCES [Gallery] ([Id])
+ALTER TABLE [Favorites] ADD FOREIGN KEY ([GalleryId]) REFERENCES [Gallery] ([Id])
 GO
 
 ALTER TABLE [Comment] ADD FOREIGN KEY ([GalleryId]) REFERENCES [Gallery] ([Id])

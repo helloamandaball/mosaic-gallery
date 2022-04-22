@@ -24,7 +24,7 @@ const MyGalleryList = () => {
         <>
             <div className="mainContent">
                 <div className="galleryHeaderBlock">
-                    <h3 className="galleryHeading">My Gallery</h3>
+                    <h3 className="galleryHeading underlineGold">My Gallery</h3>
                     <button type="button" className="newGalleryBtn" onClick={handleNewGalleryBtn}>
                         Add Gallery Image
                     </button>
@@ -32,7 +32,7 @@ const MyGalleryList = () => {
                 <div className="spacer25">&nbsp;</div>
                 
                 <div className="thumbnailListContainer">
-                    {galleries.map((gallery) => (
+                    {galleries?.map((gallery) => (
                         <MyGalleryThumbnail key={gallery.id} gallery={gallery} />
                     )).sort((a, b) => new Date(b.date) - new Date(a.date)).reverse()}
                 </div>

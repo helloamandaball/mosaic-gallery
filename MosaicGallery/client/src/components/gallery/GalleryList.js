@@ -8,6 +8,8 @@ const GalleryList = () => {
 
     const { galleries, getAllGalleries } = useContext(GalleryContext);
 
+
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,7 +26,7 @@ const GalleryList = () => {
         <>
             <div className="mainContent">
                 <div className="galleryHeaderBlock">
-                    <h3 className="galleryHeading">Galleries</h3>
+                    <h3 className="galleryHeading underlineSage">Galleries</h3>
                     <button type="button" className="newGalleryBtn" onClick={handleRandomGalleryBtn}>
                         View Random Gallery
                     </button>

@@ -50,10 +50,10 @@ INSERT INTO Comment (Id, GalleryId, UserProfileId, Subject, Content, CreateDateT
 	VALUES (2, 1, 2, 'Aenean suscipit turpis', 'Proin dui ligula, mattis in tellus condimentum, rhoncus eleifend ex. Morbi vitae metus ut ante feugiat malesuada nec ac nunc. Cras non lobortis nibh.', '2022-04-05');
 SET IDENTITY_INSERT [Comment] OFF
 
-SET IDENTITY_INSERT [Favorite] ON
-INSERT INTO [Favorite] ([Id], [GalleryId], [UserProfileId], [CreateDateTime])
+SET IDENTITY_INSERT [Favorites] ON
+INSERT INTO [Favorites] ([Id], [GalleryId], [UserProfileId], [CreateDateTime])
 	VALUES (1, 2, 1, '2022-04-04');
-INSERT INTO [Favorite] ([Id], [GalleryId], [UserProfileId], [CreateDateTime])
+INSERT INTO [Favorites] ([Id], [GalleryId], [UserProfileId], [CreateDateTime])
 	VALUES (2, 1, 2, '2022-04-05');
-SET IDENTITY_INSERT [Favorite] OFF
+SET IDENTITY_INSERT [Favorites] OFF
 

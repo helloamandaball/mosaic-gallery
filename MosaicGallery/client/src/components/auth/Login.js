@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useNavigate, Link } from "react-router-dom";
 import { UserProfileContext } from "../../providers/UserProfileProvider";
+import mgLogoSm from ".././images/mgLogoSm.png"
 import '.././layout/Layout.css'
 
 export default function Login() {
@@ -26,7 +27,8 @@ export default function Login() {
 
     return (
         <div className="loginContent">
-            <p className="hdr">Mosaic <span className="hdrSpan">Gallery</span></p>
+            {/* <p className="hdr">Mosaic <span className="hdrSpan">Gallery</span></p> */}
+            <img src={mgLogoSm} alt="Mosaic Gallery" className="loginLogo" />
             <br />
             <Form onSubmit={loginSubmit}>
                 <fieldset>

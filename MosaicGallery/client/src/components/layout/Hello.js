@@ -1,4 +1,6 @@
 import React from "react";
+import mgLogoSm from ".././images/mgLogoSm.png"
+import "./Layout.css"
 
 export default function Hello() {
   return (
@@ -6,12 +8,13 @@ export default function Hello() {
       position: "fixed",
       left: 0,
       right: 0,
-      top: "47%",
+      top: "40%",
       marginTop: "-0.5rem",
       textAlign: "center",
     }}>
-        Hello!<br />
-        Welcome to Mosaic Gallery.
+        <h4 className="welcomeHdr">Hello and welcome to</h4>
+        <img src={mgLogoSm} alt="Mosaic Gallery" className="welcomeLogo" />
+            <br />
     </span>
   );
 }

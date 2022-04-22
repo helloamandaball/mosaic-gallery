@@ -3,9 +3,15 @@
 /* Login Form */
 .loginContent{
     max-width: 500px;
-    margin: 18% auto;
+    margin: 16% auto 18%;
     text-align: center;
 }
+    .loginLogo {
+        width: 110%;
+        height: auto;
+        padding-right: 70px;
+        margin: 0 auto 90px;
+    }
     .loginInputFields {
         width: 300px;
         margin: 0 auto;
@@ -47,6 +53,29 @@
         font-size: 60px;
         color: #17A2BA
 }
+
+/* Welcome Scree */
+.welcomeHdr {
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 36px;
+        color: #841c6f
+}
+    .welcomeHdrSpan {
+        font-family: 'Raleway', Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 48px;
+        color: #840705
+    }
+.welcomeLogo {
+    width: 42%;
+    height: auto;
+    padding-right: 70px;
+    margin: 20px auto 0;
+}
+
 
 /* Register Form */
 .registerContent{
@@ -127,8 +156,22 @@
         margin: 10px 10px 10px 20px;
     }
         .navLinkName.active {
-            border-bottom: 2px solid #ffc107;
             border-bottom: 2px solid #77aa77;
+        }
+        .navLinkName.goldLink.active {
+            border-bottom: 2px solid #d39c2f;
+        }
+        .navLinkName.aquaLink.active {
+            border-bottom: 2px solid #17a2ba;
+        }
+        .navLinkName.sageLink.active {
+            border-bottom: 2px solid #77aa77;
+        }
+        .navLinkName.plumLink.active {
+            border-bottom: 2px solid #841c6f;
+        }
+        .navLinkName.brickLink.active {
+            border-bottom: 2px solid #840705;
         }
 
     .logoutBtn {
@@ -149,7 +192,17 @@
         border-color: #d6d6d6;
     }
 
+.navLogo {
+    width: 190px;
+    height: auto;
+}
+
 /* Spacers */
+.spacer10 {
+    height: 10px;
+    width: 10px;
+    background-color: transparent;
+}
 .spacer25 {
     height: 25px;
     width: 25px;
@@ -194,7 +247,7 @@ footer {
     .byLogoImg {
         width: 60px;
         height: auto;
-        margin: 5px 26px 5px 7px;
+        margin: 7px 26px 5px 7px;
     }
 
     .footerText {
@@ -223,15 +276,25 @@ footer {
         margin: 12px 0px 0px;
     }
 
-    @media only screen and (max-width: 780px) {
+    @media only screen and (max-width: 900px) {
         .navBarDiv {
             width: 100vw;
             padding: 0px 40px 0px 30px;
         }
         .navLinkName {
-            margin: 10px 10px 10px 10px;
+            margin: 10px 10px 10px 0px;
         }
         .logoutBtn {
-            margin: 20px 1px 20px 20px;
+            margin: 20px 1px 20px 0px;
+        }
+        .navLinkName{
+            font-size: 1.8vw;
+            padding: 1px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .navLinkName {
+            width: 68px;
         }
     }
